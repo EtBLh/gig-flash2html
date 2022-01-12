@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="834" height="561" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+
+var scalingGrids = {};
+var boundRects = {};
+function shape192(ctx,ctrans,frame,ratio,time){
+	var pathData="M 2242 70 Q 2024 243 2087 347 2151 451 1850 496 1129 446 446 706 -237 965 127 2638 L 3129 3700 Q 3659 3884 4037 4312 4146 4435 4257 4506 L 4887 4506 Q 4983 4450 5079 4364 L 5076 4336 Q 5109 4426 5147 4506 L 7323 4506 Q 7413 4390 7481 4258 7812 3617 7619 3057 7427 2497 6536 2559 L 6547 2530 Q 6619 2277 6387 2247 L 6381 2232 Q 6474 2024 6384 1811 6226 1441 5833 1764 5792 1658 5721 1586 5420 1270 5178 1750 5061 1507 4765 1609 4130 1828 4180 2595 3945 2282 3584 2402 3680 2101 3580 1952 3477 1828 3321 1817 L 3268 1810 Q 3528 1792 3740 1607 3788 1566 3813 1512 3900 1328 3818 1158 3780 1084 3710 1047 3640 1013 3564 1001 3720 871 3791 679 3804 641 3809 601 3840 347 3668 205 L 3611 172 3489 180 3456 199 Q 3374 251 3309 334 3261 394 3225 460 3257 265 3159 184 2801 -114 2242 70";
+	var grd=ctx.createLinearGradient(3784.75,1647.25,3191.25,3588.75);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,255,255,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,255,255,0.0])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+function sprite193(ctx,ctrans,frame,ratio,time){
+	var clips = [];
+	var frame_cnt = 74;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,387.0],ctrans,1,0,0,time);
+			break;
+		case 1:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,426.0],ctrans,1,0,0,time);
+			break;
+		case 2:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,464.0],ctrans,1,0,0,time);
+			break;
+		case 3:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,503.0],ctrans,1,0,0,time);
+			break;
+		case 4:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,541.0],ctrans,1,0,0,time);
+			break;
+		case 5:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,579.0],ctrans,1,0,0,time);
+			break;
+		case 6:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,617.0],ctrans,1,0,0,time);
+			break;
+		case 7:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,655.0],ctrans,1,0,0,time);
+			break;
+		case 8:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,693.0],ctrans,1,0,0,time);
+			break;
+		case 9:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,732.0],ctrans,1,0,0,time);
+			break;
+		case 10:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,770.0],ctrans,1,0,0,time);
+			break;
+		case 11:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,808.0],ctrans,1,0,0,time);
+			break;
+		case 12:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,846.0],ctrans,1,0,0,time);
+			break;
+		case 13:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,884.0],ctrans,1,0,0,time);
+			break;
+		case 14:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,922.0],ctrans,1,0,0,time);
+			break;
+		case 15:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,961.0],ctrans,1,0,0,time);
+			break;
+		case 16:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,999.0],ctrans,1,0,0,time);
+			break;
+		case 17:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1037.0],ctrans,1,0,0,time);
+			break;
+		case 18:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1075.0],ctrans,1,0,0,time);
+			break;
+		case 19:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1113.0],ctrans,1,0,0,time);
+			break;
+		case 20:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1151.0],ctrans,1,0,0,time);
+			break;
+		case 21:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1190.0],ctrans,1,0,0,time);
+			break;
+		case 22:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1228.0],ctrans,1,0,0,time);
+			break;
+		case 23:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1265.0],ctrans,1,0,0,time);
+			break;
+		case 24:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,35.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1247.0],ctrans,1,0,0,time);
+			break;
+		case 25:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,70.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1230.0],ctrans,1,0,0,time);
+			break;
+		case 26:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,105.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1212.0],ctrans,1,0,0,time);
+			break;
+		case 27:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,140.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1195.0],ctrans,1,0,0,time);
+			break;
+		case 28:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,176.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1177.0],ctrans,1,0,0,time);
+			break;
+		case 29:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,211.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1160.0],ctrans,1,0,0,time);
+			break;
+		case 30:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,246.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1142.0],ctrans,1,0,0,time);
+			break;
+		case 31:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,281.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1125.0],ctrans,1,0,0,time);
+			break;
+		case 32:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,316.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1107.0],ctrans,1,0,0,time);
+			break;
+		case 33:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,351.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1089.0],ctrans,1,0,0,time);
+			break;
+		case 34:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,386.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1072.0],ctrans,1,0,0,time);
+			break;
+		case 35:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,421.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1054.0],ctrans,1,0,0,time);
+			break;
+		case 36:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,457.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1037.0],ctrans,1,0,0,time);
+			break;
+		case 37:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,492.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1019.0],ctrans,1,0,0,time);
+			break;
+		case 38:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,527.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,1002.0],ctrans,1,0,0,time);
+			break;
+		case 39:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,562.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,984.0],ctrans,1,0,0,time);
+			break;
+		case 40:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,597.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,966.0],ctrans,1,0,0,time);
+			break;
+		case 41:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,632.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,949.0],ctrans,1,0,0,time);
+			break;
+		case 42:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,667.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,931.0],ctrans,1,0,0,time);
+			break;
+		case 43:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,702.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,914.0],ctrans,1,0,0,time);
+			break;
+		case 44:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,738.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,896.0],ctrans,1,0,0,time);
+			break;
+		case 45:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,773.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,879.0],ctrans,1,0,0,time);
+			break;
+		case 46:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,808.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,861.0],ctrans,1,0,0,time);
+			break;
+		case 47:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,843.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,844.0],ctrans,1,0,0,time);
+			break;
+		case 48:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,878.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,826.0],ctrans,1,0,0,time);
+			break;
+		case 49:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,843.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,808.0],ctrans,1,0,0,time);
+			break;
+		case 50:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,808.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,791.0],ctrans,1,0,0,time);
+			break;
+		case 51:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,773.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,773.0],ctrans,1,0,0,time);
+			break;
+		case 52:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,738.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,756.0],ctrans,1,0,0,time);
+			break;
+		case 53:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,702.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,738.0],ctrans,1,0,0,time);
+			break;
+		case 54:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,667.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,721.0],ctrans,1,0,0,time);
+			break;
+		case 55:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,632.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,703.0],ctrans,1,0,0,time);
+			break;
+		case 56:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,597.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,686.0],ctrans,1,0,0,time);
+			break;
+		case 57:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,562.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,668.0],ctrans,1,0,0,time);
+			break;
+		case 58:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,527.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,650.0],ctrans,1,0,0,time);
+			break;
+		case 59:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,492.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,633.0],ctrans,1,0,0,time);
+			break;
+		case 60:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,457.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,615.0],ctrans,1,0,0,time);
+			break;
+		case 61:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,421.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,598.0],ctrans,1,0,0,time);
+			break;
+		case 62:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,386.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,580.0],ctrans,1,0,0,time);
+			break;
+		case 63:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,351.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,563.0],ctrans,1,0,0,time);
+			break;
+		case 64:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,316.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,545.0],ctrans,1,0,0,time);
+			break;
+		case 65:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,281.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,527.0],ctrans,1,0,0,time);
+			break;
+		case 66:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,246.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,510.0],ctrans,1,0,0,time);
+			break;
+		case 67:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,211.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,492.0],ctrans,1,0,0,time);
+			break;
+		case 68:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,176.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,475.0],ctrans,1,0,0,time);
+			break;
+		case 69:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,140.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,457.0],ctrans,1,0,0,time);
+			break;
+		case 70:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,105.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,440.0],ctrans,1,0,0,time);
+			break;
+		case 71:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,70.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,422.0],ctrans,1,0,0,time);
+			break;
+		case 72:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,35.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,405.0],ctrans,1,0,0,time);
+			break;
+		case 73:
+			place("shape192",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape192",canvas,ctx,[-1.0999908447265625,0.0,0.0,1.0999908447265625,16688.0,387.0],ctrans,1,0,0,time);
+			break;
+	}
+}
+
+function morphshape194(ctx,ctrans,frame,ratio,time){
+	var pathData="M -458 -524 19 -25 Q -260 -314 -94 153 -190 -264 -19 46 -121 -214 56 -61 -66 -112 64 -109 -12 -11 72 -158 87 105 3 -57 185 220 -66 44 254 268 -66 114 335 315 -66 184 404 389 -3 121 L 458 443 59 59";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([Math.round(255+ratio*(0)/65535),Math.round(102+ratio*(0)/65535),Math.round(0+ratio*(1)/65535),((Math.round(255+ratio*(0)/65535))/255)]));
+	ctx.lineWidth=2.0+ratio*(0)/65535;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawMorphPath(ctx,pathData,ratio,true,scaleMode);
+
+}
+
+function morphshape195(ctx,ctrans,frame,ratio,time){
+	var pathData="M -524 -465 -25 15 Q -314 -265 153 -69 -264 -197 46 -12 -214 -130 -61 44 -112 -71 -109 47 -11 -12 -158 49 105 89 -57 -3 220 189 44 -55 268 255 114 -48 315 333 184 -41 389 402 121 9 L 443 456 59 59";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([Math.round(255+ratio*(0)/65535),Math.round(102+ratio*(0)/65535),Math.round(0+ratio*(1)/65535),((Math.round(255+ratio*(0)/65535))/255)]));
+	ctx.lineWidth=2.0+ratio*(0)/65535;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawMorphPath(ctx,pathData,ratio,true,scaleMode);
+
+}
+
+function shape196(ctx,ctrans,frame,ratio,time){
+	var pathData="M -465 15 Q -265 -69 -197 -12 -130 44 -71 47 -12 49 89 -3 189 -55 255 -48 333 -41 402 9 L 456 59";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function sprite197(ctx,ctrans,frame,ratio,time){
+	var clips = [];
+	var frame_cnt = 17;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 1:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,9362,time);
+			break;
+		case 2:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,18725,time);
+			break;
+		case 3:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,28087,time);
+			break;
+		case 4:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,37449,time);
+			break;
+		case 5:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,46811,time);
+			break;
+		case 6:
+			place("morphshape194",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,56174,time);
+			break;
+		case 7:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 8:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,7282,time);
+			break;
+		case 9:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,14564,time);
+			break;
+		case 10:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,21845,time);
+			break;
+		case 11:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,29127,time);
+			break;
+		case 12:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,36409,time);
+			break;
+		case 13:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,43691,time);
+			break;
+		case 14:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,50972,time);
+			break;
+		case 15:
+			place("morphshape195",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,58254,time);
+			break;
+		case 16:
+			place("shape196",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			break;
+	}
+}
+
+function sprite198(ctx,ctrans,frame,ratio,time){
+	var clips = [];
+	var frame_cnt = 20;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(0+time)%17,0,time);
+			break;
+		case 1:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(1+time)%17,0,time);
+			break;
+		case 2:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(2+time)%17,0,time);
+			break;
+		case 3:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(3+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(3+time)%17,0,time);
+			break;
+		case 4:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(4+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(4+time)%17,0,time);
+			break;
+		case 5:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(5+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(5+time)%17,0,time);
+			break;
+		case 6:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(6+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(6+time)%17,0,time);
+			break;
+		case 7:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(7+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(7+time)%17,0,time);
+			break;
+		case 8:
+			place("sprite197",canvas,ctx,[1.0,0.0,0.0,1.0,-1580.0,-256.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.8618316650390625,-0.504364013671875,0.504364013671875,0.8618316650390625,-1388.0,493.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.61224365234375,-0.7886505126953125,0.7886505126953125,0.61224365234375,-943.0,1181.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.763916015625,0.6428070068359375,-0.6428070068359375,0.763916015625,-1095.0,-1060.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.1050872802734375,0.994110107421875,-0.994110107421875,0.1050872802734375,-35.0,-1490.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.99102783203125,-0.108184814453125,0.108184814453125,-0.99102783203125,1589.0,355.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.9086456298828125,0.4066009521484375,-0.4066009521484375,-0.9086456298828125,1479.0,-408.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.6920623779296875,0.71533203125,-0.71533203125,-0.6920623779296875,1351.0,-1299.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.687530517578125,-0.719696044921875,0.719696044921875,-0.687530517578125,1021.0,1100.0],ctrans,1,(8+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.1705322265625,-0.981292724609375,0.981292724609375,-0.1705322265625,103.0,1505.0],ctrans,1,(8+time)%17,0,time);
+			break;
+		case 9:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(9+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(9+time)%17,0,time);
+			break;
+		case 10:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(10+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(10+time)%17,0,time);
+			break;
+		case 11:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(11+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(11+time)%17,0,time);
+			break;
+		case 12:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(12+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(12+time)%17,0,time);
+			break;
+		case 13:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(13+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(13+time)%17,0,time);
+			break;
+		case 14:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(14+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(14+time)%17,0,time);
+			break;
+		case 15:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(15+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(15+time)%17,0,time);
+			break;
+		case 16:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(16+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(16+time)%17,0,time);
+			break;
+		case 17:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(0+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(0+time)%17,0,time);
+			break;
+		case 18:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(1+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(1+time)%17,0,time);
+			break;
+		case 19:
+			place("sprite197",canvas,ctx,[0.965057373046875,-0.25885009765625,0.25885009765625,0.965057373046875,-1593.0,164.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.7011566162109375,-0.7098236083984375,0.7098236083984375,0.7011566162109375,-1213.0,837.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.3867034912109375,-0.9195709228515625,0.9195709228515625,0.3867034912109375,-606.0,1386.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.90362548828125,0.422607421875,-0.422607421875,0.90362548828125,-1333.0,-738.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[0.358734130859375,0.932159423828125,-0.932159423828125,0.358734130859375,-422.0,-1427.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.984405517578125,0.152130126953125,-0.152130126953125,-0.984405517578125,1623.0,-66.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.771636962890625,0.627593994140625,-0.627593994140625,-0.771636962890625,1319.0,-775.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4827117919921875,0.869476318359375,-0.869476318359375,-0.4827117919921875,966.0,-1602.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.8498077392578125,-0.5165863037109375,0.5165863037109375,-0.8498077392578125,1268.0,800.0],ctrans,1,(2+time)%17,0,time);
+			place("sprite197",canvas,ctx,[-0.4185791015625,-0.902862548828125,0.902862548828125,-0.4185791015625,487.0,1427.0],ctrans,1,(2+time)%17,0,time);
+			break;
+	}
+}
+
+function shape199(ctx,ctrans,frame,ratio,time){
+	var pathData="M 1493 958 Q 1421 1008 1328 997 1143 976 1127 838 1114 721 1198 647 1058 537 498 392 L 518 322 Q 1279 488 1478 577 1558 613 1586 689 1611 759 1585 836 1558 913 1493 958";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,16,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 1493 958 Q 1421 1008 1328 997 1143 976 1127 838 1114 721 1198 647 1058 537 498 392 L 518 322 Q 1279 488 1478 577 1558 613 1586 689 1611 759 1585 836 1558 913 1493 958 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -615 413 Q -1392 450 -1607 416 -1694 402 -1741 336 -1783 274 -1778 193 -1772 112 -1721 52 -1665 -15 -1572 -29 -1388 -57 -1336 73 -1294 182 -1355 275 -1192 345 -614 340 L -615 413";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,16,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -615 413 Q -1392 450 -1607 416 -1694 402 -1741 336 -1783 274 -1778 193 -1772 112 -1721 52 -1665 -15 -1572 -29 -1388 -57 -1336 73 -1294 182 -1355 275 -1192 345 -614 340 L -615 413 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function shape200(ctx,ctrans,frame,ratio,time){
+	var pathData="M 161 2238 L 159 2257 153 2310 Q 119 2584 70 2790 6 2941 -89 2952 -185 2962 -205 2863 -226 2763 -59 2256 L -7 2145 161 2238";
+	ctx.fillStyle=tocolor(ctrans.apply([255,51,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -7 2145 L 160 1780 Q 193 1944 161 2238 L -7 2145";
+	ctx.fillStyle=tocolor(ctrans.apply([255,0,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -613 1414 Q -740 1322 -857 1205 -955 1107 -1035 1002 -1400 523 -1400 -106 -1400 -874 -857 -1418 -313 -1961 455 -1961 1223 -1961 1766 -1418 2310 -874 2310 -106 2310 662 1766 1205 1568 1403 1341 1529 1326 1422 1297 1345 1238 1187 1107 1110 987 1040 840 980 693 919 250 900 -132 883 -330 1049 L -389 1107 Q -586 1333 -613 1414";
+	drawPath(ctx,pathData,false);
+	ctx.fillStyle=tocolor(ctrans.apply([255,0,0,1]));
+	ctx.fill("evenodd");
+	ctx.save();
+	ctx.clip();
+	ctx.transform(0.11993408203125,0,0,0.11993408203125,455,-216);
+	var grd=ctx.createRadialGradient(0.0,0,0,0,0,16384);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,204,51,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,0,0,1])));
+	ctx.fillStyle = grd;
+	ctx.fillRect(-16384,-16384,32768,32768);
+	ctx.restore();
+	var pathData="M -613 1414 Q -740 1322 -857 1205 -955 1107 -1035 1002 -1400 523 -1400 -106 -1400 -874 -857 -1418 -313 -1961 455 -1961 1223 -1961 1766 -1418 2310 -874 2310 -106 2310 662 1766 1205 1568 1403 1341 1529";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=4.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 1341 1529 Q 1326 1422 1297 1345 1238 1187 1107 1110 987 1040 840 980 693 919 250 900 -132 883 -330 1049 L -389 1107 Q -586 1333 -613 1414 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -613 1414 L 160 1780";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -115 936 L 160 1780";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 442 910 L 160 1780";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 1074 1091 L 160 1780";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 1341 1529 L 160 1780";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,51,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 70 2790 Q 6 2941 -89 2952 -185 2962 -205 2863 -226 2763 -59 2256 L 160 1780 Q 194 1949 159 2257 124 2564 70 2790 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,0,0,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function shape201(ctx,ctrans,frame,ratio,time){
+	var pathData="M -596 -681 Q -366 -854 -63 -856 314 -857 582 -592 850 -327 852 50 853 304 734 508 675 607 588 695 323 964 -54 965 -431 967 -699 701 -967 436 -969 59 -971 -318 -706 -586 -653 -639 -596 -681";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,16,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -596 -681 Q -366 -854 -63 -856 314 -857 582 -592 850 -327 852 50 853 304 734 508 675 607 588 695 323 964 -54 965 -431 967 -699 701 -967 436 -969 59 -971 -318 -706 -586 -653 -639 -596 -681 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function shape202(ctx,ctrans,frame,ratio,time){
+	var pathData="M 229 -208 L 493 -152";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -294 -168 L -510 -113";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 217 12 Q 221 -19 295 -32 369 -45 470 -33 570 -20 638 12 706 44 702 75 698 106 625 119 551 132 451 119 350 107 282 75 213 43 217 12";
+	ctx.fillStyle=tocolor(ctrans.apply([255,102,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 217 12 Q 221 -19 295 -32 369 -45 470 -33 570 -20 638 12 706 44 702 75 698 106 625 119 551 132 451 119 350 107 282 75 213 43 217 12 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -702 89 Q -706 58 -655 29 -603 1 -526 -8 L -393 -1 Q -336 16 -332 47 -329 78 -380 106 -432 135 -509 144 L -642 136 Q -699 120 -702 89";
+	ctx.fillStyle=tocolor(ctrans.apply([255,102,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -702 89 Q -706 58 -655 29 -603 1 -526 -8 L -393 -1 Q -336 16 -332 47 -329 78 -380 106 -432 135 -509 144 L -642 136 Q -699 120 -702 89 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function morphshape203(ctx,ctrans,frame,ratio,time){
+	var pathData="M 0 35 248 248 Q 1 36 351 330 52 77 423 388 104 118 495 445 176 176 495 445 249 234 495 445 299 274 422 387 350 315 349 328 350 315 247 247 349 314 144 164 297 273 72 107 246 232 0 49 173 174 0 49 101 116 0 49 50 75 73 108 0 35 146 166 0 35 248 248";
+	ctx.fillStyle=tocolor(ctrans.apply([Math.round(255+ratio*(0)/65535),Math.round(255+ratio*(0)/65535),Math.round(255+ratio*(0)/65535),((Math.round(255+ratio*(0)/65535))/255)]));
+	drawMorphPath(ctx,pathData,ratio,false);
+
+	ctx.fill("evenodd");
+	var pathData="M 0 35 248 248 Q 0 35 146 166 50 75 73 108 101 116 0 49 173 174 0 49 246 232 0 49 297 273 72 107 349 314 144 164 350 315 247 247 350 315 349 328 299 274 422 387 249 234 495 445 176 176 495 445 104 118 495 445 52 77 423 388 1 36 351 330 0 35 248 248 0 35 146 166 50 75 73 108 101 116 0 49 173 174 0 49 246 232 0 49 297 273 72 107 349 314 144 164 350 315 247 247 350 315 349 328 299 274 422 387 249 234 495 445 176 176 495 445 104 118 495 445 52 77 423 388 1 36 351 330 0 35 248 248";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([Math.round(255+ratio*(0)/65535),Math.round(102+ratio*(0)/65535),Math.round(0+ratio*(1)/65535),((Math.round(255+ratio*(0)/65535))/255)]));
+	ctx.lineWidth=1.5+ratio*(0)/65535;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawMorphPath(ctx,pathData,ratio,true,scaleMode);
+
+}
+
+function shape204(ctx,ctrans,frame,ratio,time){
+	var pathData="M 274 387 Q 234 445 176 445 118 445 77 387 36 330 35 247 35 166 75 107 116 49 173 49 232 49 273 107 314 164 315 247 315 328 274 387";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 274 387 Q 234 445 176 445 118 445 77 387 36 330 35 247 35 166 75 107 116 49 173 49 232 49 273 107 314 164 315 247 315 328 274 387 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=1.5;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function sprite205(ctx,ctrans,frame,ratio,time){
+	var clips = [];
+	var frame_cnt = 10;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 1:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,7282,time);
+			break;
+		case 2:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,14564,time);
+			break;
+		case 3:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,21845,time);
+			break;
+		case 4:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,29127,time);
+			break;
+		case 5:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,36409,time);
+			break;
+		case 6:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,43691,time);
+			break;
+		case 7:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,50972,time);
+			break;
+		case 8:
+			place("morphshape203",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,58254,time);
+			break;
+		case 9:
+			place("shape204",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			break;
+	}
+}
+
+function shape206(ctx,ctrans,frame,ratio,time){
+	var pathData="M 27 -642 Q 58 -458 217 -137 340 111 375 252 422 445 338 540 241 651 -42 641 -544 624 -323 41 -217 -240 27 -642";
+	ctx.fillStyle=tocolor(ctrans.apply([53,214,253,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 27 -642 Q -217 -240 -323 41 -544 624 -42 641 241 651 338 540 422 445 375 252 340 111 217 -137 58 -458 27 -642 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([1,136,169,1]));
+	ctx.lineWidth=3.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -134 -87 Q -110 -121 -107 -101 -123 -98 -144 48 -165 184 -165 284 -165 348 -95 363 -60 370 -25 364 L -25 504 Q -38 533 -97 556 -157 579 -260 466 -363 353 -276 176 -190 -2 -134 -87";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+function sprite207(ctx,ctrans,frame,ratio,time){
+	var clips = [];
+	var frame_cnt = 1;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("shape206",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			break;
+	}
+}
+
+function shape208(ctx,ctrans,frame,ratio,time){
+	var pathData="M -606 410 Q -1360 218 -1555 122 -1634 83 -1659 6 -1681 -65 -1652 -141 -1624 -217 -1557 -259 -1484 -306 -1392 -293 -1207 -265 -1195 -126 -1187 -10 -1272 61 -1138 176 -585 340 L -606 410";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,16,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -606 410 Q -1360 218 -1555 122 -1634 83 -1659 6 -1681 -65 -1652 -141 -1624 -217 -1557 -259 -1484 -306 -1392 -293 -1207 -265 -1195 -126 -1187 -10 -1272 61 -1138 176 -585 340 L -606 410 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 1493 958 Q 1421 1008 1328 997 1143 976 1127 838 1114 721 1198 647 1058 537 498 392 L 518 322 Q 1279 488 1478 577 1558 613 1586 689 1611 759 1585 836 1558 913 1493 958";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,16,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 1493 958 Q 1421 1008 1328 997 1143 976 1127 838 1114 721 1198 647 1058 537 498 392 L 518 322 Q 1279 488 1478 577 1558 613 1586 689 1611 759 1585 836 1558 913 1493 958 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([255,102,0,1]));
+	ctx.lineWidth=2.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+function sprite209(ctx,ctrans,frame,ratio,time){
+	var clips = [];
+	var frame_cnt = 26;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(0+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(0+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,115.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,35)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-490.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,35)),1,(0+time)%1,0,time);
+			break;
+		case 1:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(1+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(1+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,133.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,60)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-472.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,60)),1,(0+time)%1,0,time);
+			break;
+		case 2:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(2+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(2+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,151.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,84)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-454.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,84)),1,(0+time)%1,0,time);
+			break;
+		case 3:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(3+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(3+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,169.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,109)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-436.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,109)),1,(0+time)%1,0,time);
+			break;
+		case 4:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(4+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(4+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,187.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,133)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-418.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,133)),1,(0+time)%1,0,time);
+			break;
+		case 5:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(5+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(5+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,205.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,158)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-400.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,158)),1,(0+time)%1,0,time);
+			break;
+		case 6:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(6+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(6+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,223.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,182)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-382.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,182)),1,(0+time)%1,0,time);
+			break;
+		case 7:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(7+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(7+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,241.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,207)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-364.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,207)),1,(0+time)%1,0,time);
+			break;
+		case 8:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(8+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(8+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,259.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,231)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-346.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,231)),1,(0+time)%1,0,time);
+			break;
+		case 9:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(9+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(9+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,277.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,256)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-328.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,256)),1,(0+time)%1,0,time);
+			break;
+		case 10:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(10+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(0+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,281.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,233)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-324.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,233)),1,(0+time)%1,0,time);
+			break;
+		case 11:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(11+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(1+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,285.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,209)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-320.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,209)),1,(0+time)%1,0,time);
+			break;
+		case 12:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(12+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(2+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,290.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,186)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-315.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,186)),1,(0+time)%1,0,time);
+			break;
+		case 13:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(13+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(3+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,294.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,163)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-311.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,163)),1,(0+time)%1,0,time);
+			break;
+		case 14:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(14+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(4+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,351.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,140)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-508.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,140)),1,(0+time)%1,0,time);
+			break;
+		case 15:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(15+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(5+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,355.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,116)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-504.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,116)),1,(0+time)%1,0,time);
+			break;
+		case 16:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(16+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(6+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,360.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,93)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-499.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,93)),1,(0+time)%1,0,time);
+			break;
+		case 17:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(17+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(7+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,364.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,70)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-495.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,70)),1,(0+time)%1,0,time);
+			break;
+		case 18:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(18+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(8+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,368.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,47)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-491.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,47)),1,(0+time)%1,0,time);
+			break;
+		case 19:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(19+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(9+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,372.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,23)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-487.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,23)),1,(0+time)%1,0,time);
+			break;
+		case 20:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(0+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(0+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,376.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,0)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-483.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,0)),1,(0+time)%1,0,time);
+			break;
+		case 21:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(1+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(1+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,168.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,35)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-691.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,35)),1,(0+time)%1,0,time);
+			break;
+		case 22:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(2+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(2+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,186.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,60)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-673.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,60)),1,(0+time)%1,0,time);
+			break;
+		case 23:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(3+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(3+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,204.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,84)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-655.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,84)),1,(0+time)%1,0,time);
+			break;
+		case 24:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(4+time)%20,0,time);
+			place("shape208",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.113433837890625,-9.46044921875E-4,0.0020751953125,0.248748779296875,-1337.0,-585.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(4+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,642.0,222.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,109)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,247.0,-637.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,109)),1,(0+time)%1,0,time);
+			break;
+		case 25:
+			place("sprite198",canvas,ctx,[1.0,0.0,0.0,1.0,-118.0,50.0],ctrans,1,(5+time)%20,0,time);
+			place("shape199",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape200",canvas,ctx,[0.072113037109375,-0.087799072265625,0.192535400390625,0.15814208984375,-1883.0,-209.0],ctrans,1,0,0,time);
+			place("shape201",canvas,ctx,[1.0,0.0,0.0,1.0,0.0,0.0],ctrans,1,0,0,time);
+			place("shape202",canvas,ctx,[1.0,0.0,0.0,0.544219970703125,-214.0,-109.0],ctrans,1,0,0,time);
+			place("sprite205",canvas,ctx,[1.0,0.0,0.0,1.0,-484.0,-11.0],ctrans,1,(5+time)%10,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,660.0,115.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,35)),1,(0+time)%1,0,time);
+			place("sprite207",canvas,ctx,[0.1964111328125,0.0,0.0,0.1964111328125,-588.0,-490.0],ctrans.merge(new cxform(0,0,0,0,256,256,256,35)),1,(0+time)%1,0,time);
+			break;
+	}
+}
+
+function shape191(ctx,ctrans,frame,ratio,time){
+	var pathData="M 5388 -4291 Q 5782 -4292 5782 -3875 L 5782 4230 Q 5782 4646 5388 4646 L -5385 4646 Q -5778 4646 -5778 4230 L -5778 -3875 Q -5778 -4292 -5385 -4291 L 5388 -4291";
+	ctx.fillStyle=tocolor(ctrans.apply([102,204,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+function sprite210(ctx,ctrans,frame,ratio,time){
+	ctx.save();
+	ctx.transform(1,0,0,1,420.85,238.45);
+	var clips = [];
+	var frame_cnt = 1;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("shape191",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			place("sprite193",canvas,ctx,[0.05,0.0,0.0,0.05,-420.85,11.6],ctrans,1,(0+time)%74,0,time);
+			place("sprite209",canvas,ctx,[0.108721923828125,5.25665283203125E-4,-5.2337646484375E-4,0.108721923828125,11.75,-8.0],ctrans,1,(0+time)%26,0,time);
+			break;
+	}
+	ctx.restore();
+}
+
+var frame = -1;
+var time = 0;
+var frames = [];
+frames.push(0);
+
+var backgroundColor = "#ffffff";
+var originalWidth = 834;
+var originalHeight= 561;
+function nextFrame(ctx,ctrans){
+	var oldframe = frame;
+	frame = (frame+1)%frames.length;
+	if(frame==oldframe){time++;}else{time=0;};
+	drawFrame();
+}
+
+function drawFrame(){
+	ctx.fillStyle = backgroundColor;
+	ctx.fillRect(0,0,canvas.width,canvas.height);
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	sprite210(ctx,ctrans,frames[frame],0,time);
+	ctx.restore();
+}
+
+window.setInterval(function(){nextFrame(ctx,ctrans);},33);
+nextFrame(ctx,ctrans);
+</script>
+</body>
+</html>

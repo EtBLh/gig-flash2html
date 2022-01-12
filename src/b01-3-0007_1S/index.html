@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>b01-3-0007_1S</title>
+</head>
+<body>
+    <div id="frame">
+        <div class="start-screen element">
+            <div class="start-btn element"></div>
+        </div>
+        <div class="end-screen element">
+            <div class="container">
+                <div class="win"></div>
+                <div class="lose show"></div>
+                <div class="btn restart">再玩一次</div>
+                <div class="btn">返回選單</div>
+                <div class="btn">回主選單</div>
+            </div>
+        </div>
+        <div class="bg1 bg element"></div>
+        <div class="bg2 bg element"></div>
+        <div class="tv bg element"></div>
+        <div class="leave element">
+            <div class="row1"></div>
+            <div class="row2"></div>
+        </div>
+        <div class="star-cursor element">
+            <div class="view"></div>
+        </div>
+        <div class="canvas-container element">
+            <canvas id="sunny" class="element bg" width="1005" height="705"></canvas>
+            <!-- <canvas id="sunny" class="element bg show"></canvas> -->
+            <canvas id="cloudy" class="element bg" width="1153" height="698"></canvas>
+            <canvas id="rainy" class="element bg" width="736" height="567"></canvas>
+            <canvas id="hot" class="element bg" width="834" height="561"></canvas>
+            <canvas id="cold" class="element bg" width="1236" height="766"></canvas>
+            <canvas id="middle" class="element bg" width="1009" height="802"></canvas>
+        </div>
+        <div class="selector element bg"></div>
+        <div class="select-weather show element">
+            <div class="scloud element"></div>
+            <div class="srainy element"></div>
+            <div class="ssunny element"></div>
+        </div>
+        <div class="select-temperature element">
+            <div class="scold element"> - 0 C</div>
+            <div class="smiddle element"> - 21 C</div>
+            <div class="shot element"> - 38 C</div>
+            <div class="measure element"></div>
+        </div>
+        <div class="static-teacher element bg" id="st1"></div>
+        <div class="static-teacher element bg" id="st2"></div>
+        <div class="static-teacher element bg" id="st3"></div>
+        <div class="teacher element bg"></div>
+        <div class="good element bg"></div>
+        <div class="wrong element bg"></div>
+    </div>
+
+    <script src="../common/script.js"></script>
+    <script src="canvas/sunny.js"></script>
+    <script src="canvas/hot.js"></script>
+    <script src="canvas/cloudy.js"></script>
+    <script src="canvas/rainy.js"></script>
+    <script src="canvas/cold.js"></script>
+    <script src="canvas/middle.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
