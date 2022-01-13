@@ -1,11 +1,11 @@
 //common sound effects
 (() => {
-    document.querySelectorAll(".btn").forEach(elem => {
-        elem.addEventListener("mouseenter", () => {
-            let btnhover = new Audio("sounds/95.mp3");
-            btnhover.play();
-        })
-    })
+    // document.querySelectorAll(".btn").forEach(elem => {
+    //     elem.addEventListener("mouseenter", () => {
+    //         let btnhover = new Audio("sounds/95.mp3");
+    //         btnhover.play();
+    //     })
+    // })
     document.querySelector(".leave").addEventListener("mouseenter", () => {
         let leave = new Audio("../common/assets/sounds/leave.mp3");
         leave.play();
@@ -48,3 +48,7 @@ var cursor_controller = (()=>{
     }
 })();
 
+let play_music = (path) => {
+    let temp = new Audio(path);
+    temp.play();
+}
