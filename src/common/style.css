@@ -37,12 +37,12 @@ html, body{
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url(../common/assets/fonts/NotoSansTC-Bold.otf);
+    src: url(../common/assets/fonts/NotoSansSC-Bold.otf);
 }
 
 @font-face {
     font-family: 'Noto Sans Black';
-    src: url(../common/assets/fonts/NotoSansTC-Black.otf);
+    src: url(../common/assets/fonts/NotoSansSC-Black.otf);
 }
 
 .leave{
