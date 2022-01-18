@@ -117,15 +117,15 @@ let game = () => {
             playing = false;
             sec = 0;
             clearInterval(gameloop);
-            cursor_controller.toggle_star();
-            document.querySelector(".end-screen").style["display"] = "";
+            g_cursor_controller.toggle_star();
+            document.querySelector(".end-screen").classList.add("show");
             document.querySelector(".result-view>.number").innerHTML = score_counter.get_score();
             document.querySelector(".time").innerHTML = "00:00";
         }
     }
 }
 
-var cursor_controller = (()=>{
+var g_cursor_controller = (()=>{
     let star_cursor = document.querySelector(".star-cursor");
     let hammer_cursor = document.querySelector(".hammer-cursor");
     let hammer_cursor_view = document.querySelector(".hammer-cursor>.view");
@@ -165,19 +165,18 @@ var cursor_controller = (()=>{
     for (melem of mouse_elem){
         main.register_mouse(melem);
     }
-    cursor_controller.toggle_star();
+    g_cursor_controller.toggle_star();
     document.querySelector(".start-btn").addEventListener("click",e => {
         document.querySelector(".start-screen").style["display"] = "none";
         main.start();
-        cursor_controller.toggle_hammer();
+        g_cursor_controller.toggle_hammer();
     });
     document.querySelector(".restart").addEventListener("click",e => {
-        document.querySelector(".end-screen").style["display"] = "none";
+        document.querySelector(".end-screen").classList.remove("show");
         document.querySelector(".start-screen").style["display"] = "none";
         main.start();
-        cursor_controller.toggle_hammer();
+        g_cursor_controller.toggle_hammer();
     });
-
 })();
 
 //other sound effects
@@ -188,19 +187,4 @@ var cursor_controller = (()=>{
             btnhover.play();
         })
     })
-    document.querySelector(".leave").addEventListener("mouseenter", () => {
-        let leave = new Audio("sounds/70.mp3");
-        leave.play();
-    })
-    let bgm = new Audio("sounds/bgm.mp3");
-    bgm.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
-    //chrome doesnt allow autoplay
-    let autoplay = function(e){
-        bgm.play();
-        document.removeEventListener("mousedown",autoplay);
-    }
-    document.addEventListener("mousedown",autoplay);
 })();

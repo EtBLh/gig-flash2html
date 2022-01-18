@@ -25,8 +25,8 @@ html, body{
     width: 800px;
     height: 600px;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 49%;
+    top: 49%;
     transform: translate(-50%, -50%);
     /* background-color: black; */
     overflow: hidden;
@@ -37,12 +37,12 @@ html, body{
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url(../common/assets/fonts/NotoSansTC-Bold.otf);
+    src: url(../common/assets/fonts/NotoSansSC-Bold.otf);
 }
 
 @font-face {
     font-family: 'Noto Sans Black';
-    src: url(../common/assets/fonts/NotoSansTC-Black.otf);
+    src: url(../common/assets/fonts/NotoSansSC-Black.otf);
 }
 
 .leave{
