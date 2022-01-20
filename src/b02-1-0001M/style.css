@@ -1,0 +1,246 @@
+.bg1{
+    background-image: url(shapes/75.svg);
+    background-size: contain;
+    width: 150%;
+    height: 150%;
+    left: -25%;
+    top: -25%;
+}
+
+.bg2{
+    background-image: url(shapes/78.svg);
+    background-size: contain;
+    width: 230%;
+    height: 120%;
+    left: -25%;
+    bottom: -60%;
+    background-repeat: no-repeat;
+}
+
+.bg3{
+    background-image: url(shapes/79.svg);
+    background-size: contain;
+    width: 260%;
+    height: 70%;
+    left: -100%;
+    bottom: 10%;
+    background-repeat: no-repeat;
+}
+
+.bg4{
+    background-image: url(shapes/92.svg);
+    background-size: contain;
+    width: 599px;
+    height: 40%;
+    right: 35px;
+    bottom: 188px;
+    background-repeat: no-repeat;
+}
+
+.zebra-container{
+    width: 756px;
+    height: 102px;
+    left: 0px;
+    bottom: 98px;
+    background-repeat: repeat-x;
+    -webkit-mask: linear-gradient(300deg, transparent 10%, #000 10%);
+    mask: linear-gradient(300deg, transparent 10%, #000 10%);
+    mask-image: linear-gradient(300deg, transparent 10%, #000 10%);
+    mask-position: right;
+    overflow: hidden;
+}
+
+.zebra{
+    background-image: url(shapes/90.svg);
+    background-size: contain;
+    width: calc(756px * 2);
+    height: 102px;
+    left: -756px;
+    bottom: 0px;
+}
+
+.shapes{
+    width: 10%;
+    height: 20%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 80px;
+    transform: scaleX(2);
+}
+
+.shapes.triangle{
+    background-image: url(shapes/135.svg);
+}
+
+.shapes.circle{
+    background-image: url(shapes/131.svg);
+}
+.shapes.rectangle{
+    background-image: url(shapes/133.svg);
+}
+
+.shapes.putting{
+    filter: brightness(1.75);
+    transform: scaleX(2) scaleY(0.9);
+}
+
+.clickbox{
+    z-index: 100;
+    position: inherit;
+    width: 80px;
+    height: 40px;
+    top: 25%;
+}
+
+.c1{
+    left: 33%;
+}
+
+.c2{
+    left: 55%;
+}
+
+.c3{
+    left: 78%;
+}
+
+.right{
+    background-image: url(shapes/111.svg);
+    opacity: 0.8;
+    width: 20%;
+    height: 20%;
+    background-size: contain;
+    top: 20%;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.right.show{
+    display: block;
+}
+
+.r1{
+    left: 31%;
+}
+
+.r2{
+    left: 53%;
+}
+
+.r3{
+    left: 76%;
+}
+
+.cross{
+    background-image: url(shapes/109.svg);
+    opacity: 0.8;
+    width: 20%;
+    height: 20%;
+    background-size: contain;
+    top: 20%;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.cross.show{
+    display: block;
+}
+
+.x1{
+    left: 31%;
+}
+
+.x2{
+    left: 53%;
+}
+
+.x3{
+    left: 76%;
+}
+
+.score-view{
+    z-index: 100;
+    display: none;
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    text-align: center;
+    color: red;
+    font-size: 2rem;
+    line-height: 300px;
+}
+
+#score{
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.score-view::before{
+    z-index: 49;
+    content: ' ';
+    background-image: url(shapes/5.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px; 
+    position: absolute;
+    top:0;
+    left: 0;
+    animation: ro 4s linear infinite;
+}
+
+@keyframes ro {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.score-view.show{
+    display: inline;
+}
+
+.timer{
+    z-index: 100;
+    background-image: url(shapes/102.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 20%;
+    top: 1rem;
+    left: 1rem;
+    color: blue;
+    padding: rem;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.result-view{
+    background-image: url(shapes/117.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 20%;
+    color: white;
+    text-align: right;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem .5rem;
+    vertical-align: baseline;
+}
+
+.result-view > .number{
+    font-size: 72px;
+}
+
+.game_over{
+    background-image: url(shapes/125.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 10%; 
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
