@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="229.85px" width="743.2px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, -29.55, -219.6)">
+    <path d="M748.75 229.6 Q762.75 229.6 762.75 243.6 L762.75 425.5 Q762.75 439.45 748.75 439.45 L53.55 439.45 Q39.55 439.45 39.55 425.5 L39.55 243.6 Q39.55 229.6 53.55 229.6 L748.75 229.6" fill="#ff9900" fill-rule="evenodd" stroke="none"/>
+    <path d="M748.75 229.6 L53.55 229.6 Q39.55 229.6 39.55 243.6 L39.55 425.5 Q39.55 439.45 53.55 439.45 L748.75 439.45 Q762.75 439.45 762.75 425.5 L762.75 243.6 Q762.75 229.6 748.75 229.6 Z" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="20.0"/>
+    <path d="M748.75 229.6 Q762.75 229.6 762.75 243.6 L762.75 425.5 Q762.75 439.45 748.75 439.45 L53.55 439.45 Q39.55 439.45 39.55 425.5 L39.55 243.6 Q39.55 229.6 53.55 229.6 L748.75 229.6" fill="#ff9900" fill-rule="evenodd" stroke="none"/>
+    <path d="M744.8 225.6 Q758.65 225.6 758.65 239.6 L758.65 421.5 Q758.65 435.45 744.8 435.45 L57.35 435.45 Q43.5 435.45 43.5 421.5 L43.5 239.6 Q43.5 225.6 57.35 225.6 L744.8 225.6" fill="url(#gradient0)" fill-rule="evenodd" stroke="none"/>
+    <path d="M313.3 421.6 Q297.05 421.6 297.05 406.6 L297.05 258.2 Q297.05 243.2 313.3 243.2 L493.8 243.2 Q510.05 243.2 510.05 258.2 L510.05 406.6 Q510.05 421.6 493.8 421.6 L313.3 421.6" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <path d="M313.3 421.6 L493.8 421.6 Q510.05 421.6 510.05 406.6 L510.05 258.2 Q510.05 243.2 493.8 243.2 L313.3 243.2 Q297.05 243.2 297.05 258.2 L297.05 406.6 Q297.05 421.6 313.3 421.6 Z" fill="none" stroke="#bd4b00" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.0"/>
+    <path d="M548.1 421.6 Q531.85 421.6 531.85 406.6 L531.85 258.2 Q531.85 243.2 548.1 243.2 L728.6 243.2 Q744.85 243.2 744.85 258.2 L744.85 406.6 Q744.85 421.6 728.6 421.6 L548.1 421.6" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <path d="M548.1 421.6 L728.6 421.6 Q744.85 421.6 744.85 406.6 L744.85 258.2 Q744.85 243.2 728.6 243.2 L548.1 243.2 Q531.85 243.2 531.85 258.2 L531.85 406.6 Q531.85 421.6 548.1 421.6 Z" fill="none" stroke="#bd4b00" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.0"/>
+    <path d="M78.5 421.6 Q62.25 421.6 62.25 406.6 L62.25 258.2 Q62.25 243.2 78.5 243.2 L259.0 243.2 Q275.25 243.2 275.25 258.2 L275.25 406.6 Q275.25 421.6 259.0 421.6 L78.5 421.6" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <path d="M78.5 421.6 L259.0 421.6 Q275.25 421.6 275.25 406.6 L275.25 258.2 Q275.25 243.2 259.0 243.2 L78.5 243.2 Q62.25 243.2 62.25 258.2 L62.25 406.6 Q62.25 421.6 78.5 421.6 Z" fill="none" stroke="#bd4b00" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.0"/>
+  </g>
+  <defs>
+    <linearGradient gradientTransform="matrix(2.0E-4, 0.1053, -0.1265, 3.0E-4, 400.0, 370.4)" gradientUnits="userSpaceOnUse" id="gradient0" spreadMethod="pad" x1="-819.2" x2="819.2">
+      <stop offset="0.0" stop-color="#ffffff" stop-opacity="0.0"/>
+      <stop offset="1.0" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+</svg>

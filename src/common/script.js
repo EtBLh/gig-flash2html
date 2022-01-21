@@ -42,7 +42,22 @@ var cursor_controller = (()=>{
     }
 })();
 
-let play_music = (path) => {
+let play_music = (path, cb) => {
     let temp = new Audio(path);
+    if (typeof cb !== "undefined"){
+        temp.addEventListener('ended', cb);
+    }
     temp.play();
+}
+
+let show_element = (el, duration) => {
+    el.classList.add("show");
+    if(typeof duration !== "undefined")
+        setTimeout(() => {
+            el.classList.remove("show");
+        }, duration);
+}
+
+let hide_element = (el) => {
+    el.classList.remove("show");
 }

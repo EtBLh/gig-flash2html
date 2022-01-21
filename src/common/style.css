@@ -281,10 +281,6 @@ html, body{
     left: 20%;
 }
 
-.teacher.show::before{
-    animation: teacher-eye1 0.8s linear infinite;
-}
-
 .teacher::after{
     visibility: hidden;
     display: block;
@@ -302,6 +298,20 @@ html, body{
 
 .teacher.show::after{
     animation: teacher-eye2 0.8s linear infinite;
+}
+
+.teacher.show::before{
+    animation: teacher-eye1 0.8s linear infinite;
+}
+
+.teacher.static.show::before{
+    animation: none;
+    visibility: visible;
+}
+
+.teacher.static.show::after{
+    animation: none;
+    visibility: visible;
 }
 
 @keyframes teacher-eye1 {

@@ -1,0 +1,255 @@
+.bg1{
+    width: 101%;
+    height: 101%;
+    top: -.5%;
+    left: -.5%;
+    background-size: contain;
+    background-image: url(shapes/86.svg);
+}
+
+.bg2{
+    width: 101%;
+    height: 101%;
+    top: -.5%;
+    left: -.5%;
+    background-size: contain;
+    background-image: url(shapes/87.svg);
+    opacity: .5;
+}
+
+.bg3{
+    width: 101%;
+    height: 150%;
+    top: -25%;
+    left: -.5%;
+    background-size: contain;
+    background-image: url(shapes/88.svg);
+}
+
+.rotating-star{
+    background-image: url(shapes/89.svg);
+    width: 15%;
+    height: 20%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotating-star 5s infinite linear;
+    opacity: .5;
+}
+
+@keyframes rotating-star {
+    from {transform: rotate(0deg);}
+    from {transform: rotate(360deg);}
+}
+
+.rs1{
+    top: 10%;
+    left: 50%;
+}
+
+.rs2{
+    top: -5%;
+    left: -5%;
+    width: 20%;
+    height: 25%;
+}
+
+.rs3{
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 40%;
+}
+
+.bg4{
+    width: 90%;
+    height: 20%;
+    top: 22%;
+    left: 5%;
+    background-image: url(shapes/91.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bg5{
+    width: 90%;
+    height: 40%;
+    top: 37%;
+    left: 5%;
+    background-image: url(shapes/92.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.counter{
+    user-select: none;
+    padding: 0rem 1rem;
+    font-size: 40px;
+    font-family: 'Noto Sans';
+    color: #00fc;
+    background-color: white;
+    border-radius: 1rem;
+    left: 1rem;
+    top: 1rem;
+}
+
+.question{
+    top: 23%;
+    left: 13%;
+    width: 80%;
+    height: 20%;
+    font: 'Noto Sans';
+    font-size: 2.5rem;
+}
+
+.overlay{
+    width: 25%;
+    height: 27.5%;
+    background-image: url(shapes/93.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.ol1{
+    top: 41.5%;
+    left: 9.5%;
+}
+
+.ol2{
+    top: 41.5%;
+    left: 38%;
+}
+
+.ol3{
+    top: 41.5%;
+    left: 66.5%;
+}
+
+.question-img.q1{
+    top: 46%;
+    left: 17.5%;
+    width: 70%;
+    height: 27.5%;
+    background-image: url(shapes/144.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.question-img.q2{
+    top: 42%;
+    left: 11%;
+    width: 79%;
+    height: 28%;
+    background-image: url(shapes/149.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.question-img.q3{
+    top: 42%;
+    left: 13.5%;
+    width: 77%;
+    height: 27.5%;
+    background-image: url(shapes/152.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.question-img{
+    display: none;
+}
+
+.question-img.show{
+    display: block;
+    pointer-events: none;
+}
+
+.teacher-border{
+    width: 19%;
+    height: 30%;
+    top: 7%;
+    right: 7%;
+    background-image: url(shapes/96.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.t1{
+    top: 6.5%;
+    right: 9%; 
+    transform: scale(0.7);
+}
+
+.cross{
+    width: 25%;
+    height: 25.5%;
+    background-image: url(shapes/111.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 42.5%;
+    display: none;
+    pointer-events: none;
+}
+
+.cr1{
+    left: 12.5%;
+}
+
+.cr2{
+    left: 41%;
+}
+
+.cr3{
+    left: 69.5%;
+}
+
+.circle{
+    width: 25%;
+    height: 25.5%;
+    background-image: url(shapes/113.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 42.5%;
+    display: none;
+    pointer-events: none;
+}
+
+.ci1{
+    left: 12.5%;
+}
+
+.ci2{
+    left: 41%;
+}
+
+.ci3{
+    left: 69.5%;
+}
+
+.circle.show, .cross.show{
+    display: block;
+}
+
+.win{
+    background-image: url(shapes/127.svg);
+    width: 50%;
+    height: 15%;
+    margin: 30% auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 0;
+    display: none;
+}
+
+.lose{
+    background-image: url(shapes/128.svg);
+    width: 50%;
+    height: 13%;
+    margin: 15% auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: none;
+}
+
+.win.show, .lose.show{
+    display: block;
+}
