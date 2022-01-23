@@ -10,6 +10,8 @@ html, body{
 
 * {
     box-sizing: border-box;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .element{
@@ -242,6 +244,7 @@ html, body{
     width: 100%;
     height: 100%;
     background-image: url(../common/assets/css-sprite/star.png);
+    background-size: initial;
     background-position: 0 0;
     animation: star-rotate 1s steps(38) infinite;
 }
