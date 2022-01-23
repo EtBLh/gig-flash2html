@@ -50,14 +50,21 @@ let play_music = (path, cb) => {
     temp.play();
 }
 
-let show_element = (el, duration) => {
+let show_element = (el, duration, cb) => {
     el.classList.add("show");
     if(typeof duration !== "undefined")
         setTimeout(() => {
             el.classList.remove("show");
         }, duration);
+    if(typeof cb !== "undefined"){
+        setTimeout(cb, duration);
+    }
 }
 
 let hide_element = (el) => {
     el.classList.remove("show");
+}
+
+function mod(n, m) {
+    return ((n % m) + m) % m;
 }

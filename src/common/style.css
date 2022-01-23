@@ -337,3 +337,21 @@ html, body{
         visibility: visible;
     }
 }
+
+.back2menu{
+    z-index: 1700;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 100px;
+    bottom: 10px;
+    width: 80px;
+    height: 80px;
+    background-image: url(../common/assets/shapes/163.svg);
+}
+
+.back2menu:hover{
+    bottom: 9px;
+    height: 80.5px;
+    width: 80.5px;
+    background-image: url(../common/assets/shapes/164.svg);
+}
