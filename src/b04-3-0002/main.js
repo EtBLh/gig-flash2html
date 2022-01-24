@@ -69,6 +69,8 @@ let game = (() => {
             })
         });
         
+        hide_element(element.cc);
+        
         vehicle = -1;
         color_mode = -1;
         color_enable = false;
