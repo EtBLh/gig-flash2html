@@ -1,0 +1,176 @@
+.pc2 > .preview{
+    background-image: url(shapes/222.svg);
+}
+
+.pc2 > .prototype-vehicle {
+    background-image: url(shapes/133.svg);
+    left: 69%;
+}
+
+.pc2 > .p1{
+    width: 45px;
+    height: 100px;
+}
+
+.pc2 > .p1.placed, .pc2 > .p1.color{
+    background-image: url(shapes/225.svg);
+    top: 380px;
+    left: 557px;
+    z-index: 6;
+}
+
+.pc2 > .p1.color{
+    mask: url(shapes/223.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/223.svg) no-repeat top center / contain;
+    background-color: white;
+    z-index: 5;
+}
+
+.pc2 > .p2{
+    width: 50px;
+    height: 100px;
+}
+
+.pc2 > .p2.placed, .pc2 > .p2.color {
+    background-image: url(shapes/225.svg);
+    top: 366px;
+    left: 601px;
+    z-index: 6;
+}
+
+
+.pc2 > .p2.color{
+    mask: url(shapes/223.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/223.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 5;
+}
+
+.pc2 > .p3{
+    width: 38px;
+    height: 27px;
+}
+
+.pc2 > .p3.placed, .pc2 > .p3.color {
+    background-image: url(shapes/235.svg);
+    top: 434px;
+    left: 518px;
+    z-index: 12;
+}
+
+.pc2 > .p3.color{
+    width: 24px;
+    height: 40px;
+    top: 435px;
+    left: 532px;
+}
+
+.pc2 > .p3.color{
+    mask: url(shapes/233.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/233.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 11;
+}
+
+.pc2 > .p4{
+    width: 52px;
+    height: 26px;
+}
+
+.pc2 > .p4.placed, .pc2 > .p4.color {
+    background-image: url(shapes/240.svg);
+    top: 387px;
+    left: 698px;
+    z-index: 12;
+}
+
+.pc2 > .p4.color{
+    width: 94px;
+    height: 21px;
+    top: 390px;
+    z-index: 11;
+}
+
+.pc2 > .p4.color{
+    mask: url(shapes/238.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/238.svg) no-repeat top left / contain;
+    background-color: white;
+}
+
+.pc2 > .p5{
+    width: 182px;
+    height: 64px;
+}
+
+.pc2 > .p5.placed, .pc2 > .p5.color {
+    background-image: url(shapes/245.svg);
+    top: 387px;
+    left: 571px;
+    z-index: 10;
+}
+
+.pc2 > .p5.color{
+    mask: url(shapes/243.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/243.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 9;
+}
+
+.pc2 > .p6{
+    width: 245px;
+    height: 111px;
+}
+
+.pc2 > .p6.placed, .pc2 > .p6.color {
+    background-image: url(shapes/250.svg);
+    top: 393px;
+    left: 518px;
+    z-index: 8;
+}
+
+.pc2 > .p6.color{
+    mask: url(shapes/248.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/248.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 7;
+}
+
+.pc2 > .parts.unplaced{
+    transform: scale(2);
+} 
+
+.pc2 > .p1.unplaced {
+    top: 163px;
+    left: 143px;
+    background-image: url(sprites/DefineSprite_227/1.svg);
+}
+
+.pc2 > .p2.unplaced {
+    top: 163px;
+    left: 258px;
+    background-image: url(sprites/DefineSprite_227/1.svg);
+}
+
+.pc2 > .p3.unplaced {
+    top: 272px;
+    left: 126px;
+    background-image: url(sprites/DefineSprite_237/1.svg);
+}
+
+.pc2 > .p4.unplaced {
+    top: 258px;
+    left: 290px;
+    background-image: url(sprites/DefineSprite_242/1.svg);
+}
+
+.pc2 > .p5.unplaced {
+    top: 328px;
+    left: 218px;
+    background-image: url(sprites/DefineSprite_247/1.svg);
+}
+
+.pc2 > .p6.unplaced {
+    top: 402px;
+    left: 242px;
+    background-image: url(sprites/DefineSprite_252/1.svg);
+}

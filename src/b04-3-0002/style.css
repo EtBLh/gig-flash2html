@@ -1,0 +1,263 @@
+#frame{
+    user-select: none;
+}
+
+.bg1{
+    background-image: url(shapes/120.svg);
+    width: 200%;
+    height: 200%;
+    left: -70%;
+}
+
+.bg2{
+    background-image: url(shapes/79.svg);
+    width: 90%;
+    left: 5%;
+    top: 20%;
+    height: 100%;
+}
+
+.menu{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.menu.show, .main.show{
+    display: block;
+}
+
+.prototype-paper{
+    background-image: url("sprites/DefineSprite_86/1.png");
+    width: 40%;
+    height: 40%;
+}
+
+.pp1{
+    top: 10%;
+    left: 35%;
+}
+
+.pp2{
+    bottom: 10%;
+    left: 15%;
+}
+
+.pp3{
+    bottom: 10%;
+    left: 55%;
+}
+
+.ppv1{
+    top: 20%;
+    left: 38%;
+    background-image: url(sprites/DefineSprite_132/1.svg);
+}
+
+.ppv1:hover{
+    background-image: url(sprites/DefineSprite_132/2.svg);
+}
+
+.ppv2.prototype-vehicle{
+    bottom: 0%;
+    left: 19%;
+    width: 35%;
+    height: 35%;
+    background-image: url(sprites/DefineSprite_134/1.svg);
+}
+
+.ppv2:hover{
+    background-image: url(sprites/DefineSprite_134/2.svg);
+}
+
+.ppv3{
+    bottom: 10%;
+    right: 16%;
+    background-image: url(sprites/DefineSprite_129/1.svg);
+}
+
+.ppv3:hover{
+    background-image: url(sprites/DefineSprite_129/2.svg);
+}
+
+.prototype-vehicle{
+    width: 25%;
+    height: 25%;
+}
+
+.bg4{
+    background-image: url(shapes/81.svg);
+    width: 120%;
+    height: 70%;
+    left: 0;
+    bottom: -40%;
+}
+
+.bg3{
+    background-image: url(shapes/82.svg);
+    width: 55%;
+    height: 80%;
+    top: 10%;
+    left: 7%;
+}
+
+.main > .prototype-paper{
+    top: 10%;
+    right: -5%;
+}
+
+.main .prototype-vehicle{
+    top: 20%;
+    left: 67%;
+    width: 25%;
+    height: 35%;
+}
+
+.main > .ppv1{
+    top: 20%;
+    left: 67%;
+}
+
+
+.main > .ppv2{
+    top: 20%;
+    left: 69%;
+    width: 35%;
+    height: 50%;
+}
+
+.main > .ppv3{
+    top: 25%;
+    left: 69%;
+}
+
+.preview{
+    width: 30%;
+    height: 40%;
+    bottom: 18%;
+    right: 5%;
+    background-position: bottom;
+}
+
+.pc2 > .preview{
+    background-image: url(shapes/222.svg);
+}
+
+.pc3 > .preview{
+    background-image: url(shapes/154.svg);
+}
+
+.parts-container{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.parts-container.show{
+    display: block;
+}
+
+#frame > .main > .parts-container > .color{
+    background-image: none;
+}
+
+.parts-container > .parts.unplaced{
+    transform: scale(1.5);
+    display: none;
+}
+
+.parts-container > .parts.unplaced.show{
+    display: block;
+}
+
+.parts.color, .parts.placed {
+    opacity: 0;
+}
+
+.parts.color.show, .parts.placed.show{
+    opacity: 1;
+}
+
+#frame .parts-container > .element.parts.color.c1{
+    background-color: red;
+}
+#frame .parts-container > .element.parts.color.c2{
+    background-color: yellow;
+}
+#frame .parts-container > .element.parts.color.c3{
+    background-color: green;
+}
+#frame .parts-container > .element.parts.color.c4{
+    background-color: orange;
+}
+#frame .parts-container > .element.parts.color.c5{
+    background-color: blue;
+}
+
+.color-buckets{
+    background-image: url(sprites/DefineSprite_144/1.svg);
+    width: 60%;
+    height: 20%;
+    left: 7%;
+    bottom: 5%;
+    filter: brightness(0.5);
+}
+
+.color-buckets.show{
+    filter: none;
+}
+
+.color-bucket{
+    width: 18%;
+    height: 100%;
+    left: 0%;
+}
+
+.cb1{
+    left: 0;
+}
+.cb2{
+    left: 20%;
+}
+.cb3{
+    left: 40%;
+}
+.cb4{
+    left: 60%;
+}
+.cb5{
+    left: 80%;
+}
+
+.color-cursor{
+    width: 10%;
+    height: 10%;
+    display: none;
+    z-index: 1000;
+}
+
+.color-cursor.show{
+    display: block;
+}
+
+.color-cursor.cc1{
+    background-image: url(sprites/DefineSprite_116/5.svg);
+}
+.color-cursor.cc2{
+    background-image: url(sprites/DefineSprite_116/3.svg);
+}
+.color-cursor.cc3{
+    background-image: url(sprites/DefineSprite_116/4.svg);
+}
+.color-cursor.cc4{
+    background-image: url(sprites/DefineSprite_116/1.svg);
+}
+.color-cursor.cc5{
+    background-image: url(sprites/DefineSprite_116/2.svg);
+}

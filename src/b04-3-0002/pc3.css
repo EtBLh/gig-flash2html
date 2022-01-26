@@ -1,0 +1,139 @@
+.pc3 > .preview{
+    z-index: 0;
+    background-image: url(shapes/154.svg);
+}
+
+.pc3 > .prototype-vehicle {
+    background-image: url(sprites/DefineSprite_128/1.svg);
+    top: 24%;
+    left: 68%;
+}
+
+.pc3 > .p1{
+    width: 16px;
+    height: 70px;
+}
+
+.pc3 > .p1.placed, .pc3 > .p1.color{
+    background-image: url(shapes/158.svg);
+    top: 400px;
+    left: 521px;
+    z-index: 10;
+}
+
+.pc3 > .p1.color{
+    mask: url(shapes/156.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/156.svg) no-repeat top center / contain;
+    background-color: white;
+    z-index: 9;
+}
+
+.pc3 > .p2{
+    width: 212px;
+    height: 41px;
+}
+
+.pc3 > .p2.placed, .pc3 > .p2.color {
+    background-image: url(shapes/164.svg);
+    top: 452px;
+    left: 578px;
+    z-index: 6;
+}
+
+.pc3 > .p2.color{
+    mask: url(shapes/162.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/162.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 5;
+}
+
+.pc3 > .p3{
+    width: 224px;
+    height: 85px;
+}
+
+.pc3 > .p3.placed, .pc3 > .p3.color {
+    background-image: url(shapes/169.svg);
+    top: 390px;
+    left: 532px;
+    z-index: 8;
+}
+
+.pc3 > .p3.color{
+    mask: url(shapes/167.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/167.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 7;
+}
+
+.pc3 > .p4{
+    width: 102px;
+    height: 72px;
+}
+
+.pc3 > .p4.placed, .pc3 > .p4.color {
+    background-image: url(shapes/174.svg);
+    top: 386px;
+    left: 558px;
+    z-index: 10;
+}
+
+.pc3 > .p4.color{
+    mask: url(shapes/172.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/172.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 9;
+}
+
+.pc3 > .p5{
+    width: 46px;
+    height: 46px;
+}
+
+.pc3 > .p5.placed, .pc3 > .p5.color {
+    background-image: url(shapes/179.svg);
+    top: 427px;
+    left: 715px;
+    z-index: 10;
+}
+
+.pc3 > .p5.color{
+    mask: url(shapes/177.svg) no-repeat top center / contain;
+    -webkit-mask: url(shapes/177.svg) no-repeat top left / contain;
+    background-color: white;
+    z-index: 9;
+}
+
+.pc3 > .parts.unplaced {
+    transform: scale(2);
+}
+
+.pc3 > .p1.unplaced {
+    top: 163px;
+    left: 143px;
+    background-image: url(sprites/DefineSprite_160/1.svg);
+}
+
+.pc3 > .p2.unplaced {
+    top: 156px;
+    left: 305px;
+    background-image: url(sprites/DefineSprite_166/1.svg);
+}
+
+.pc3 > .p3.unplaced {
+    top: 272px;
+    left: 213px;
+    background-image: url(sprites/DefineSprite_171/1.svg);
+}
+
+.pc3 > .p4.unplaced {
+    top: 371px;
+    left: 154px;
+    background-image: url(sprites/DefineSprite_176/1.svg);
+}
+
+.pc3 > .p5.unplaced {
+    top: 409px;
+    left: 332px;
+    background-image: url(sprites/DefineSprite_181/1.svg);
+}
