@@ -1,9 +1,9 @@
 .pc1 > .preview{
-    background-image: url(shapes/186.svg);
+    background-image: url("http://localhost:8081/shapes/186.svg");
 }
 
 .pc1 > .prototype-vehicle {
-    background-image: url(sprites/DefineSprite_132/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_132/1.svg");
 }
 
 .pc1 > .parts.unplaced{
@@ -16,15 +16,15 @@
 }
 
 .pc1 > .p1.placed, .pc1 > .p1.color{
-    background-image: url(shapes/189.svg);
+    background-image: url("http://localhost:8081/shapes/189.svg");
     top: 412px;
     left: 524px;
     z-index: 8;
 }
 
 .pc1 > .p1.color{
-    mask: url(shapes/187.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/187.svg) no-repeat top center / contain;
+    mask: url("http://localhost:8081/shapes/187.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/187.svg") no-repeat top center / contain;
     background-color: white;
     z-index: 7;
 }
@@ -35,15 +35,15 @@
 }
 
 .pc1 > .p2.placed, .pc1 > .p2.color {
-    background-image: url(shapes/194.svg);
+    background-image: url("http://localhost:8081/shapes/194.svg");
     top: 393px;
     left: 692px;
     z-index: 12;
 }
 
 .pc1 > .p2.color{
-    mask: url(shapes/192.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/192.svg) no-repeat top left / contain;
+    mask: url("http://localhost:8081/shapes/192.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/192.svg") no-repeat top left / contain;
     background-color: white;
     z-index: 11;
 }
@@ -54,15 +54,15 @@
 }
 
 .pc1 > .p3.placed, .pc1 > .p3.color {
-    background-image: url(shapes/219.svg);
+    background-image: url("http://localhost:8081/shapes/219.svg");
     top: 329px;
     left: 584px;
     z-index: 10;
 }
 
 .pc1 > .p3.color{
-    mask: url(shapes/217.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/217.svg) no-repeat top left / contain;
+    mask: url("http://localhost:8081/shapes/217.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/217.svg") no-repeat top left / contain;
     background-color: white;
     z-index: 9;
 }
@@ -73,15 +73,15 @@
 }
 
 .pc1 > .p4.placed, .pc1 > .p4.color {
-    background-image: url(shapes/199.svg);
+    background-image: url("http://localhost:8081/shapes/199.svg");
     top: 434px;
     left: 739px;
     z-index: 12;
 }
 
 .pc1 > .p4.color{
-    mask: url(shapes/197.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/197.svg) no-repeat top left / contain;
+    mask: url("http://localhost:8081/shapes/197.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/197.svg") no-repeat top left / contain;
     background-color: white;
     z-index: 11;
 }
@@ -92,15 +92,15 @@
 }
 
 .pc1 > .p5.placed, .pc1 > .p5.color {
-    background-image: url(shapes/211.svg);
+    background-image: url("http://localhost:8081/shapes/211.svg");
     top: 446px;
     left: 560px;
     z-index:10; 
 }
 
 .pc1 > .p5.color{
-    mask: url(shapes/209.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/209.svg) no-repeat top left / contain;
+    mask: url("http://localhost:8081/shapes/209.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/209.svg") no-repeat top left / contain;
     background-color: white;
     z-index:9; 
 }
@@ -111,15 +111,15 @@
 }
 
 .pc1 > .p6.placed, .pc1 > .p6.color {
-    background-image: url(shapes/211.svg);
+    background-image: url("http://localhost:8081/shapes/211.svg");
     top: 446px;
     left: 682px;
     z-index:10; 
 }
 
 .pc1 > .p6.color{
-    mask: url(shapes/209.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/209.svg) no-repeat top left / contain;
+    mask: url("http://localhost:8081/shapes/209.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/209.svg") no-repeat top left / contain;
     background-color: white;
     z-index:9; 
 }
@@ -130,15 +130,15 @@
 }
 
 .pc1 > .p7.placed, .pc1 > .p7.color {
-    background-image: url(shapes/205.svg);
+    background-image: url("http://localhost:8081/shapes/205.svg");
     top: 402px;
     left: 518px;
     z-index: 6;
 }
 
 .pc1 > .p7.color{
-    mask: url(shapes/203.svg) no-repeat top center / contain;
-    -webkit-mask: url(shapes/203.svg) no-repeat top left / contain;
+    mask: url("http://localhost:8081/shapes/203.svg") no-repeat top center / contain;
+    -webkit-mask: url("http://localhost:8081/shapes/203.svg") no-repeat top left / contain;
     background-color: white;
     z-index: 5;
 }
@@ -146,42 +146,42 @@
 .pc1 > .p1.unplaced {
     top: 163px;
     left: 219px;
-    background-image: url(sprites/DefineSprite_191/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_191/1.svg");
 }
 
 .pc1 > .p2.unplaced {
     top: 394px;
     left: 385px;
-    background-image: url(sprites/DefineSprite_196/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_196/1.svg");
     z-index: 10;
 }
 
 .pc1 > .p3.unplaced {
     top: 272px;
     left: 154px;
-    background-image: url(sprites/DefineSprite_221/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_221/1.svg");
 }
 
 .pc1 > .p4.unplaced {
     top: 293px;
     left: 417px;
-    background-image: url(sprites/DefineSprite_201/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_201/1.svg");
 }
 
 .pc1 > .p5.unplaced {
     top: 290px;
     left: 256px;
-    background-image: url(sprites/DefineSprite_213/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_213/1.svg");
 }
 
 .pc1 > .p6.unplaced {
     top: 290px;
     left: 326px;
-    background-image: url(sprites/DefineSprite_213/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_213/1.svg");
 }
 
 .pc1 > .p7.unplaced {
     top: 402px;
     left: 122px;
-    background-image: url(sprites/DefineSprite_208/1.svg);
+    background-image: url("http://localhost:8081/sprites/DefineSprite_208/1.svg");
 }

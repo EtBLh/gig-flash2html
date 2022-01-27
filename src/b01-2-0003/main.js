@@ -1,9 +1,9 @@
 let game = (() => {
 
     let question_list = [
-        "哪裏有两支铅笔?",
-        "哪裏有一隻熊猫?",
-        "哪裏有五把刷子?"
+        "哪里有两支铅笔?",
+        "哪里有一只熊猫?",
+        "哪里有五把刷子?"
     ];
     let question_audios = [
         "sounds/q1.mp3",

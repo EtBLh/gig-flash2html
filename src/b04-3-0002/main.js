@@ -92,7 +92,7 @@ let game = (() => {
             element.unplaced_part.forEach((up, vi) => {
                 up.forEach((val, key) => {
                     val.addEventListener("mousedown", e => {
-                        play_music("5_按鈕.WAV.mp3");
+                        play_music("sounds/5_按鈕.WAV.mp3");
                         let rect = e.currentTarget.getBoundingClientRect();
                         rex = e.clientX - rect.left;
                         rey = e.clientY - rect.top;
@@ -121,7 +121,7 @@ let game = (() => {
                 pp.forEach((val, key) => {
                     val.addEventListener("click", () => {
                         if (!enable_color || color_mode === -1) return;
-                        play_music("5_按鈕.WAV.mp3");
+                        play_music("sounds/5_按鈕.WAV.mp3");
                         [1,2,3,4,5].forEach(num => element.color_part[vi][key].classList.remove("c"+num));
                         element.color_part[vi][key].classList.add("c"+(color_mode+1));
                     })
