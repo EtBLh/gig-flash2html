@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>泡泡圖卡</title>
+</head>
+<body>
+    <div id="frame">
+        <div class="timer element"></div>
+        <div class="start-screen element">
+            <div class="start-btn element"></div>
+        </div>
+
+        <div class="bg1 element"></div>
+        <div class="screw s1 element"></div>
+        <div class="screw s2 element"></div>
+        <div class="screw s3 element"></div>
+        <div class="screw s4 element"></div>
+
+        <div class="bubble-container element">
+
+        </div>
+
+        <div class="container element">
+            <div class="card element c1 show">
+                <div class="card-bg element"></div>
+                <canvas id="fireworks" width="800" height="600" class="element"></canvas>
+            </div>
+            <div class="card element c2">
+                <div class="card-bg element"></div>
+            </div>
+            <div class="card element c3">
+                <div class="card-bg element"></div>
+            </div>
+            <canvas id="mask-board" class="element" width="624" height="432"></canvas>
+        </div>
+
+        <div class="leave element">
+            <div class="row1"></div>
+            <div class="row2"></div>
+        </div>
+        <div class="star-cursor element">
+            <div class="view"></div>
+        </div>
+
+    </div>
+
+
+    <script src="../common/script.js"></script>
+    <script src="fireworks.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
