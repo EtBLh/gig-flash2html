@@ -1,0 +1,397 @@
+.bg1{
+    background-image: url(shapes/80.png);
+    width: 123%;
+    height: 123%;
+    left: -13%;
+    top: -5%;
+}
+
+.selector{
+    width: 10%;
+    height: 13%;
+    border-radius: 50%;
+    background-color: #fff5;
+    opacity: 0;
+}
+
+.cview{
+    width: 10%;
+    height: 13%;
+    z-index: 10;
+    background-position: center;
+    pointer-events: none;
+}
+
+.cview.hide{
+    display: none;
+}
+
+.selector:hover{
+    opacity: 1;
+}
+
+.s1{
+    left: 38%;
+    top: 23%;
+}
+.s2{
+    left: 38%;
+    top: 43%;
+}
+.s3{
+    left: 38%;
+    top: 63%;
+}
+.s4{
+    left: 56%;
+    top: 23%;
+}
+.s5{
+    left: 56%;
+    top: 43%;
+}
+.s6{
+    left: 56%;
+    top: 63%;
+}
+
+.v1{
+    left: 38%;
+    top: 23%;
+}
+.v2{
+    left: 38%;
+    top: 43%;
+}
+.v3{
+    left: 38%;
+    top: 63%;
+}
+.v4{
+    left: 56%;
+    top: 23%;
+}
+.v5{
+    left: 56%;
+    top: 43%;
+}
+.v6{
+    left: 56%;
+    top: 63%;
+}
+
+.click-indicate{
+    background-image: url(shapes/129.png);
+    animation: click-indict-animation 0.5s infinite steps(1);
+    width: 55%;
+    height: 80%;
+    top: 10%;
+    left: 29%;
+    pointer-events: none;
+    display: none;
+}
+
+
+.click-indicate.show{
+    display: block;
+}
+
+@keyframes click-indict-animation {
+    50%{
+        background-image: url(shapes/130.png);
+    }
+    100%{
+        background-image: url(shapes/129.png);
+    }
+}
+
+.model.female{
+    background-image: url(shapes/103.png);
+    width: 17%;
+    height: 40%;
+    top: 32%;
+    left: 8%;
+    display: none;
+}
+
+.model.female.sad{
+    background-image: url(shapes/121.png);
+}
+
+.model.male{
+    background-image: url(shapes/112.png);
+    width: 17%;
+    height: 40%;
+    top: 32%;
+    left: 8%;
+    display: none;
+}
+
+.model.male.sad{
+    background-image: url(shapes/122.png);
+}
+
+.model.show{
+    display: block;
+}
+
+.model.undressed > * {
+    display: none;
+}
+
+.model.undressed > .show {
+    display: block;
+}
+
+.f1 .shoes{
+    background-image: url(shapes/104.png);
+    width: 28%;
+    height: 10%;
+    left: 33%;
+    bottom: -5%;
+    z-index: 8;
+}
+
+.f1 .legs{
+    background-image: url(shapes/105.png);
+    width: 31%;
+    height: 31%;
+    left: 34%;
+    bottom: 5%;
+    z-index: 7;
+}
+
+.f1 .body{
+    background-image: url(shapes/107.png);
+    width: 42%;
+    height: 32%;
+    left: 25%;
+    bottom: 25%;
+    z-index: 8;
+}
+
+.f1 .head{
+    background-image: url(shapes/106.png);
+    width: 134%;
+    height: 40%;
+    left: -21%;
+    top: -4%;
+    z-index: 8;
+}
+
+.f1.undressed{
+    transform: scaleX(-1);
+    top: 41%;
+    left: 77%;
+}
+
+.f2 .shoes{
+    background-image: url(shapes/110.png);
+    width: 28%;
+    height: 10%;
+    left: 33%;
+    bottom: -5%;
+    z-index: 8;
+}
+
+.f2 .legs{
+    background-image: url(shapes/108.png);
+    width: 48%;
+    height: 31%;
+    left: 20%;
+    bottom: 8%;
+    z-index: 7;
+}
+
+.f2 .body{
+    background-image: url(shapes/109.png);
+    width: 37%;
+    height: 32%;
+    left: 27%;
+    bottom: 25%;
+    z-index: 8;
+}
+
+.f2 .head{
+    background-image: url(shapes/111.png);
+    width: 134%;
+    height: 48%;
+    left: 1%;
+    top: -4%;
+    z-index: 8;
+}
+
+.f2.undressed{
+    transform: scaleX(-1);
+    top: 41%;
+    left: 77%;
+}
+
+.m1 .shoes{
+    background-image: url(shapes/115.png);
+    width: 63%;
+    height: 10%;
+    left: 16%;
+    bottom: -4%;
+    z-index: 8;
+}
+
+.m1 .legs{
+    background-image: url(shapes/113.png);
+    width: 48%;
+    height: 31%;
+    left: 20%;
+    bottom: 2%;
+    z-index: 7;
+}
+
+.m1 .body{
+    background-image: url(shapes/114.png);
+    width: 64%;
+    height: 32%;
+    left: 14%;
+    bottom: 23%;
+    z-index: 8;
+}
+
+.m1 .head{
+    background-image: url(shapes/116.png);
+    width: 66%;
+    height: 24%;
+    left: 22%;
+    top: -7%;
+    z-index: 8;
+}
+
+.m1.undressed{
+    transform: scaleX(-1);
+    top: 41%;
+    left: 77%;
+}
+
+.m2 .shoes{
+    background-image: url(shapes/117.png);
+    width: 63%;
+    height: 10%;
+    left: 16%;
+    bottom: -4%;
+    z-index: 8;
+}
+
+.m2 .legs{
+    background-image: url(shapes/118.png);
+    width: 52%;
+    height: 32%;
+    left: 24%;
+    bottom: 2%;
+    z-index: 7;
+}
+
+.m2 .body{
+    background-image: url(shapes/119.png);
+    width: 64%;
+    height: 32%;
+    left: 16%;
+    bottom: 23%;
+    z-index: 8;
+}
+
+.m2 .head{
+    background-image: url(shapes/120.png);
+    width: 66%;
+    height: 24%;
+    left: 22%;
+    top: -10%;
+    z-index: 8;
+}
+
+.m2.undressed{
+    transform: scaleX(-1);
+    top: 41%;
+    left: 77%;
+}
+
+.cview.m1h{
+    background-image: url(shapes/116.png);
+}
+.cview.m1s{
+    background-image: url(shapes/115.png);
+}
+.cview.m1l{
+    background-image: url(shapes/113.png);
+}
+.cview.m1b{
+    background-image: url(shapes/114.png);
+}
+
+.cview.m2h{
+    background-image: url(shapes/120.png);
+}
+.cview.m2s{
+    background-image: url(shapes/117.png);
+}
+.cview.m2l{
+    background-image: url(shapes/118.png);
+}
+.cview.m2b{
+    background-image: url(shapes/119.png);
+}
+
+.cview.f2h{
+    background-image: url(shapes/111.png);
+}
+.cview.f2s{
+    background-image: url(shapes/110.png);
+}
+.cview.f2l{
+    background-image: url(shapes/108.png);
+}
+.cview.f2b{
+    background-image: url(shapes/109.png);
+}
+
+.cview.f1h{
+    background-image: url(shapes/106.png);
+}
+.cview.f1s{
+    background-image: url(shapes/104.png);
+}
+.cview.f1l{
+    background-image: url(shapes/105.png);
+}
+.cview.f1b{
+    background-image: url(shapes/107.png);
+}
+
+.countdown{
+    background-image: url(shapes/92.png);
+    color: blue;
+    width: 20%;
+    height: 10%;
+    top: 1rem;
+    left: 1rem;
+    text-align: center;
+    line-height: 50px;
+    font-size: 2rem;
+}
+
+.lose{
+    background-image: url(shapes/85.png);
+    height: 20%;
+    width: 100%;
+    background-position: center;
+    margin-bottom: 1rem;
+    display: none;
+}
+.win{
+    background-image: url(shapes/84.png);
+    height: 20%;
+    width: 100%;
+    background-position: center;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.lose.show, .win.show{
+    display: block;
+}
