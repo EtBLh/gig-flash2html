@@ -1,124 +1,139 @@
 let game = (() => {
-    let target = 0;
-    let remain_target = -1;
-    let arr = [];
-    let arr_view = document.querySelectorAll(".item");
-    arr_view.forEach((el, key) => {
-        el.addEventListener("click", () => {
-            click(key);
+
+    let category = -1;
+    let holding = -1;
+    let steps = [0,0,0,0,0];
+    let orders = [
+        [0,2,0,1,1,1,1,1,1,1,1],
+        [2,0,0,1,4,0,0,6,3,0,0,0,5,4],
+        [1,2,1,4,3,1,2,1,0,4,2,1,0,4],
+        [3,0,2,3,1,4,4,4,4],
+        [3,0,1,0,1,0,2,1,2,1]
+    ];
+
+    let element = {
+        partscontainer: document.querySelectorAll(".parts-container"),
+        unplaced_part: [
+            document.querySelectorAll(".pc1 > .unplaced"),
+            document.querySelectorAll(".pc2 > .unplaced"),
+            document.querySelectorAll(".pc3 > .unplaced"),
+            document.querySelectorAll(".pc4 > .unplaced"),
+            document.querySelectorAll(".pc5 > .unplaced"),
+        ],
+        results: document.querySelectorAll(".current"),
+        resultscontainer: document.querySelectorAll(".current-container"),
+        nav: document.querySelectorAll(".cat"),
+        boy: document.querySelector(".boy")
+    }
+
+    let start = (_category) => {
+        category = _category;
+        element.partscontainer.forEach(ele => hide_element(ele));
+        show_element(element.partscontainer[_category]);
+        cursor_controller.star_off();
+        cursor_controller.frame_on();
+        element.unplaced_part.forEach(upl => {
+            upl.forEach( up => {
+                show_element(up);
+            })
+        })
+    }
+
+    let restart = () => {
+        element.unplaced_part.forEach(val => {
+            val.forEach(vall => {
+                show_element(vall);
+            })
         });
-        el.addEventListener("hover", () => {
-            play_music("sounds/btnhover.mp3");
-        });
-    });
-    let timer = null;
-    let timer_val = 60;
-
-    let click = (idx) => {
-        if (arr[idx] == target){
-            play_music("sounds/right.mp3");
-            arr_view[idx].classList.add("confirm");
-            remain_target--;
-            if (remain_target <= 0) win();
-        } else {
-            play_music("sounds/wrong.mp3");
-            let teacher = document.querySelector(".teacher");
-            let wrong = document.querySelector(".wrong");
-            teacher.classList.add("show");
-            wrong.classList.add("show");
-            setTimeout(() => {
-                teacher.classList.remove("show");
-                wrong.classList.remove("show");
-            }, 500);
-        }
-    }
-
-    let win = () => {
-        play_music("sounds/win.mp3");
-        clearInterval(timer);
-        document.querySelector(".end-screen").classList.add("show");
-        document.querySelector(".win").classList.add("show");
-        document.querySelector(".lose").classList.remove("show");
-    }
-
-    let lose = () => {
-        play_music("sounds/lose.mp3");
-        clearInterval(timer);
-        document.querySelector(".end-screen").classList.add("show");
-        document.querySelector(".lose").classList.add("show");
-        document.querySelector(".win").classList.remove("show");
-    }
-
-    let start = function(){
-        play_music("sounds/start_voice.mp3");
-        timer = setInterval(() => {
-            timer_val--;
-            if (timer_val <= 0){
-                lose();
-            } else {
-                document.querySelector(".timer").innerHTML = "00 : " + (timer_val/10 > 1? "" : "0") + timer_val;
-            }
-        },1000);
-    }
-
-    let init = function(){
-        arr = [];
-        for (let i = 0; i < 32; i++){
-            arr.push(0);
-        }
-        target = Math.floor(Math.random()*4)+1;
-        remain_target = Math.floor(Math.random()*4)+6;
-        for (let temp_remain = remain_target; temp_remain > 0; temp_remain--){
-            let idx = Math.floor(Math.random()*(32-temp_remain));
-            while (arr[idx] != 0){
-                idx = Math.floor(Math.random()*(32-temp_remain)); 
-            }
-            arr[idx] = target;
-        }
-        let temp_idx_arr = [0,1,2,3,4];
-        temp_idx_arr.splice(target,1);
-        temp_idx_arr.splice(0,1);
-        for (let i = 0; i < 32; i++){
-            if (arr[i] == 0)  arr[i] = temp_idx_arr[Math.floor(Math.random()*3)];
-            arr_view[i].classList.add("p"+arr[i]);
-        }
-        document.querySelector(".target-item").classList.add("p" + target);
+        
+        category = -1;
+        remain_unplaced = [7,6,5];
+        cursor_controller.star_on();
+        show_element(element.menu);
+        hide_element(element.main);
     }
 
     return {
         start: start,
-        restart: function(){
-            arr_view.forEach(el => {
-                el.classList.remove("confirm");
-                el.classList.remove("p1");
-                el.classList.remove("p2");
-                el.classList.remove("p3");
-                el.classList.remove("p4");
+        restart: restart,
+        init: () => {
+            let drag_elem = null;
+            element.unplaced_part.forEach((up, vi) => {
+                up.forEach((val, key) => {
+                    val.addEventListener("mousedown", e => {
+                        holding = key;
+                        let rect = e.currentTarget.getBoundingClientRect();
+                        rex = e.clientX - rect.left;
+                        rey = e.clientY - rect.top;
+                        drag_elem = val;
+                        drag_idx = key;
+                        drag_vehicle = vi;
+                    });
+                });
             });
-            document.querySelector(".target-item").classList.remove("p" + target);
-            timer_val = 60;
-            init();
-            start();
-            document.querySelector(".end-screen").classList.remove("show");            
-        },
-        init: init
+            element.nav.forEach((cat, idx) => {
+                cat.addEventListener("click", () => {
+                    category = idx;
+                    element.partscontainer.forEach(ele => hide_element(ele));
+                    show_element(element.partscontainer[category]);
+                    console.log(idx);
+                    play_music("sounds/5_按鈕.WAV.mp3");
+                });
+            });
+            let frame = document.querySelector("#frame");
+
+            frame.addEventListener("mouseup",e => {
+                if (drag_elem == null) return;
+                drag_idx = -1;
+                drag_number = -1;
+                drag_elem.style["top"] = "";
+                drag_elem.style["left"] = "";
+                drag_elem = null;
+                console.log(holding, category, orders[category][steps[category]])
+
+                if (holding == orders[category][steps[category]]) {
+                    steps[category]++;
+                    element.resultscontainer[category].className = "";
+                    element.resultscontainer[category].classList.add("element");
+                    element.resultscontainer[category].classList.add("current-container");
+                    element.resultscontainer[category].classList.add("s"+steps[category]);
+                    element.boy.classList.add("yes");
+                    play_music("sounds/3_正確.mp3");
+                    setTimeout(() => {
+                        element.boy.classList.remove("yes");
+                    }, 500);
+                } else {
+                    element.boy.classList.add("sad");
+                    play_music("sounds/1_錯誤.mp3");
+                    setTimeout(() => {
+                        element.boy.classList.remove("sad");
+                    }, 500);
+                }
+                holding = -1;
+            });
+            frame.addEventListener("mousemove",e => {
+                if (drag_elem === null) return;
+                let rect = e.currentTarget.getBoundingClientRect();
+                let x = e.clientX - rect.left - drag_elem.offsetWidth/2;
+                let y = e.clientY - rect.top - drag_elem.offsetHeight/2;
+
+                drag_elem.style["left"] = ( x ) + "px";
+                drag_elem.style["top"] = ( y ) + "px";
+            });
+        }
     }
 })();
 
 //main
 (() => {
 
-    game.init();
-    
     cursor_controller.star_on();
-    document.querySelector(".start-btn").addEventListener("click",e => {
-        document.querySelector(".start-screen").style["display"] = "none";
-        cursor_controller.star_off();
-        cursor_controller.frame_on(); 
-        game.start();
-    });
 
-    document.querySelector(".restart").addEventListener("click", game.restart);
+    game.init();
+
+    document.querySelector(".start-btn").addEventListener("click", () => {
+        document.querySelector(".start-screen").style.display = "none";
+        // play_music("sounds/1_開始玩.mp3");
+    })
 
 })();
-
