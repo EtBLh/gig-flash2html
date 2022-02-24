@@ -3,6 +3,7 @@ let game = (() => {
     let category = -1;
     let holding = -1;
     let steps = [0,0,0,0,0];
+    let in_range = false;
     let orders = [
         [0,2,0,1,1,1,1,1,1,1,1],
         [2,0,0,1,4,0,0,6,3,0,0,0,5,4],
@@ -10,6 +11,8 @@ let game = (() => {
         [3,0,2,3,1,4,4,4,4],
         [3,0,1,0,1,0,2,1,2,1]
     ];
+
+    let current_coor = [0,0];
 
     let element = {
         partscontainer: document.querySelectorAll(".parts-container"),
@@ -47,11 +50,14 @@ let game = (() => {
         });
         
         category = -1;
-        remain_unplaced = [7,6,5];
         cursor_controller.star_on();
         show_element(element.menu);
         hide_element(element.main);
     }
+
+    // setInterval(() => {
+    //     console.log(in_range, current_coor);
+    // },500)
 
     return {
         start: start,
@@ -78,8 +84,19 @@ let game = (() => {
                     show_element(element.partscontainer[category]);
                     console.log(idx);
                     play_music("sounds/5_按鈕.WAV.mp3");
+                    update_box();
                 });
+
             });
+
+            let update_box = () => {
+                let frame_rect = document.querySelector("#frame").getBoundingClientRect();
+                let current_rect = element.results[category].getBoundingClientRect();
+                current_coor = [
+                    current_rect.top - frame_rect.top,
+                    current_rect.left - frame_rect.left
+                ];
+            }
             let frame = document.querySelector("#frame");
 
             frame.addEventListener("mouseup",e => {
@@ -91,7 +108,7 @@ let game = (() => {
                 drag_elem = null;
                 console.log(holding, category, orders[category][steps[category]])
 
-                if (holding == orders[category][steps[category]]) {
+                if (holding == orders[category][steps[category]] && in_range) {
                     steps[category]++;
                     element.resultscontainer[category].className = "";
                     element.resultscontainer[category].classList.add("element");
@@ -102,6 +119,7 @@ let game = (() => {
                     setTimeout(() => {
                         element.boy.classList.remove("yes");
                     }, 500);
+                    update_box();
                 } else {
                     element.boy.classList.add("sad");
                     play_music("sounds/1_錯誤.mp3");
@@ -112,6 +130,7 @@ let game = (() => {
                 holding = -1;
             });
             frame.addEventListener("mousemove",e => {
+                e.preventDefault();
                 if (drag_elem === null) return;
                 let rect = e.currentTarget.getBoundingClientRect();
                 let x = e.clientX - rect.left - drag_elem.offsetWidth/2;
@@ -119,6 +138,8 @@ let game = (() => {
 
                 drag_elem.style["left"] = ( x ) + "px";
                 drag_elem.style["top"] = ( y ) + "px";
+                
+                in_range = (y > current_coor[0]) && (x > current_coor[1]);
             });
         }
     }
