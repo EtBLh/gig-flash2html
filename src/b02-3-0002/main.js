@@ -22,7 +22,7 @@ let game = (() => {
     ];
 
     let countdown;
-    let timer = 3;
+    let timer = 60;
 
     let start = () => {
         countdown = setInterval(() => {
