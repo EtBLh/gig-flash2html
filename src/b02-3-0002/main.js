@@ -22,7 +22,7 @@ let game = (() => {
     ];
 
     let countdown;
-    let timer = 60;
+    let timer = 3;
 
     let start = () => {
         countdown = setInterval(() => {
@@ -125,4 +125,3 @@ let game = (() => {
 
     document.querySelector(".restart").addEventListener("click", game.restart);
 })();
-

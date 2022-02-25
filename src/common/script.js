@@ -3,7 +3,9 @@
     document.querySelector(".leave").addEventListener("mouseenter", () => {
         let leave = new Audio("../common/assets/sounds/leave.mp3");
         leave.play();
-    })
+    });
+
+    if (typeof nobgm !== 'undefined') return;
     let bgm = new Audio("../common/assets/sounds/bgm.mp3");
     bgm.addEventListener('ended', function() {
         this.currentTime = 0;
@@ -48,6 +50,11 @@ let play_music = (path, cb) => {
         temp.addEventListener('ended', cb);
     }
     temp.play();
+}
+
+let stop_audio = (audio) => {
+    audio.pause();
+    audio.currentTime = 0;
 }
 
 let show_element = (el, duration, cb) => {
