@@ -55,6 +55,13 @@ let game = (() => {
         hide_element(element.main);
     }
 
+<<<<<<< HEAD
+=======
+    // setInterval(() => {
+    //     console.log(in_range, current_coor);
+    // },500)
+
+>>>>>>> develop
     return {
         start: start,
         restart: restart,
@@ -135,7 +142,11 @@ let game = (() => {
                 drag_elem.style["left"] = ( x ) + "px";
                 drag_elem.style["top"] = ( y ) + "px";
                 
+<<<<<<< HEAD
                 in_range = (y > current_coor[0]-60) && (x > current_coor[1]-60);
+=======
+                in_range = (y > current_coor[0]) && (x > current_coor[1]);
+>>>>>>> develop
             });
         }
     }
