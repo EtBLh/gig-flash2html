@@ -99,8 +99,8 @@
 }
 
 .rod.pulled{
-    animation: pulledani 1s ease;
-    -webkit-animation: pulledani 1s ease;
+    animation: pulledani .6s ease;
+    -webkit-animation: pulledani .6s ease;
 }
 
 @keyframes pulledani {
@@ -113,4 +113,76 @@
     100% {
         transform: rotate(0deg);
     }
+}
+
+.right{
+    background-image: url(shapes/89.svg);
+    width: 20%;
+    height: 30%;
+    top: 40%;
+    left: 60%;
+    z-index: 200;
+    animation: flashing .8s linear infinite;
+    display: none;
+}
+
+.right.show{
+    display: block;
+}
+
+@keyframes flashing{
+    19%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 1;
+    }
+    41%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 0;
+    }
+    61%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    81%{
+        opacity: 0;
+    }
+}
+
+.indicator{
+}
+
+.indicator::after{
+    content: ' ';
+    background: radial-gradient(circle at center , #00000000, yellow);
+    opacity: .2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.indicator.r{
+    background-image: url(sprites/DefineSprite_47/4.svg);
+}
+.indicator.e{
+    background-image: url(sprites/DefineSprite_47/5.svg);
+}
+.indicator.m{
+    background-image: url(sprites/DefineSprite_47/3.svg);
+}
+.indicator.c{
+    background-image: url(sprites/DefineSprite_47/1.svg);
+}
+.indicator.p{
+    background-image: url(sprites/DefineSprite_47/2.svg);
 }
