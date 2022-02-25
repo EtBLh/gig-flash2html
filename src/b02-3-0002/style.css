@@ -114,3 +114,14 @@
         transform: rotate(0deg);
     }
 }
+
+.timer{
+    top: 1rem;
+    left: 1rem;
+    background: white;
+    color: blue;
+    font-size: 2.5rem;
+    font-family: 'Noto Sans', serif;
+    padding: 0rem .5rem;
+    border-radius: 1rem;
+}
