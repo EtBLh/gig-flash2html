@@ -1,0 +1,461 @@
+.current-container{
+    width: 40%;
+    height: 60%;
+    bottom: 5%;
+    right: 10%;
+}
+.current{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: initial;
+    transform: scale(3);
+    transform-origin: top left;
+}
+
+.pc1 .s0 .current{
+    background-image: url(shapes/131.svg);
+}
+.pc1 .s1 .current{
+    background-image: url(shapes/134.svg);
+}
+.pc1 .s2 .current{
+    background-image: url(shapes/135.svg);
+}
+.pc1 .s3 .current{
+    background-image: url(shapes/136.svg);
+}
+.pc1 .s4 .current{
+    background-image: url(shapes/137.svg);
+}
+.pc1 .s5 .current{
+    background-image: url(shapes/138.svg);
+}
+.pc1 .s6 .current{
+    background-image: url(shapes/139.svg);
+}
+.pc1 .s7 .current{
+    background-image: url(shapes/140.svg);
+}
+.pc1 .s8 .current{
+    background-image: url(shapes/141.svg);
+}
+.pc1 .s9 .current{
+    background-image: url(shapes/142.svg);
+}
+.pc1 .s10 .current{
+    background-image: url(shapes/143.svg);
+}
+.pc1 .s11 .current{
+    background-image: url(shapes/144.svg);
+}
+
+.pc2 .s0 .current{
+    background-image: url(shapes/152.svg);
+}
+.pc2 .s0 .position-wrapper{
+    left: 181px;
+    top: 112px;
+}
+.pc2 .s1 .current{
+    background-image: url(shapes/153.svg);
+}
+.pc2 .s1 .position-wrapper{
+    left: 181px;
+    top: 112px;
+}
+.pc2 .s2 .current{
+    background-image: url(shapes/154.svg);
+}
+.pc2 .s2 .position-wrapper{
+    left: 181px;
+    top: 112px;
+}
+.pc2 .s3 .current{
+    background-image: url(shapes/155.svg);
+}
+.pc2 .s3 .position-wrapper{
+    left: 150px;
+    top: 112px;
+}
+.pc2 .s4 .current{
+    background-image: url(shapes/156.svg);
+}
+.pc2 .s4 .position-wrapper{
+    left: 55px;
+    top: 112px;
+}
+.pc2 .s5 .current{
+    background-image: url(shapes/157.svg);
+}
+.pc2 .s5 .position-wrapper{
+    left: 55px;
+    top: 112px;
+}
+.pc2 .s6 .current{
+    background-image: url(shapes/158.svg);
+}
+.pc2 .s6 .position-wrapper{
+    left: 55px;
+    top: 112px;
+}
+.pc2 .s7 .current{
+    background-image: url(shapes/159.svg);
+}
+.pc2 .s7 .position-wrapper{
+    left: 55px;
+    top: 67px;
+}
+.pc2 .s8 .current{
+    background-image: url(shapes/160.svg);
+}
+.pc2 .s8 .position-wrapper{
+    left: 55px;
+    top: 32px;
+}
+.pc2 .s9 .current{
+    background-image: url(shapes/161.svg);
+}
+.pc2 .s9 .position-wrapper{
+    left: 55px;
+    top: 21px;
+}
+.pc2 .s10 .current{
+    background-image: url(shapes/162.svg);
+}
+.pc2 .s10 .position-wrapper{
+    left: 55px;
+    top: 4px;
+}
+.pc2 .s11 .current{
+    background-image: url(shapes/163.svg);
+}
+.pc2 .s12 .current{
+    background-image: url(shapes/164.svg);
+}
+.pc2 .s13 .current{
+    background-image: url(shapes/165.svg);
+}
+.pc2 .s14 .current{
+    background-image: url(shapes/166.svg);
+}
+
+.pc3 .s0 .current{
+    background-image: url(shapes/182.svg);
+}
+.pc3 .s0 .position-wrapper{
+    top: 225px;
+    left: 133px;
+}
+.pc3 .s1 .current{
+    background-image: url(shapes/183.svg);
+}
+.pc3 .s1 .position-wrapper{
+    top: 155px;
+    left: 104px;
+}
+.pc3 .s2 .current{
+    background-image: url(shapes/184.svg);
+}
+.pc3 .s2 .position-wrapper{
+    top: 105px;
+    left: 73px;
+}
+.pc3 .s3 .current{
+    background-image: url(shapes/185.svg);
+}
+.pc3 .s3 .position-wrapper{
+    top: 105px;
+    left: 73px;
+}
+.pc3 .s4 .current{
+    background-image: url(shapes/186.svg);
+}
+.pc3 .s4 .position-wrapper{
+    left: 73px;
+}
+.pc3 .s5 .current{
+    background-image: url(shapes/187.svg);
+}
+.pc3 .s5 .position-wrapper{
+    left: 73px;
+}
+.pc3 .s6 .current{
+    background-image: url(shapes/188.svg);
+}
+.pc3 .s6 .position-wrapper{
+    left: 73px;
+}
+.pc3 .s7 .current{
+    background-image: url(shapes/189.svg);
+}
+.pc3 .s7 .position-wrapper{
+    left: 73px;
+}
+.pc3 .s8 .current{
+    background-image: url(shapes/190.svg);
+}
+.pc3 .s8 .position-wrapper{
+    left: 73px;
+}
+.pc3 .s9 .current{
+    background-image: url(shapes/191.svg);
+}
+.pc3 .s9 .position-wrapper{
+    left: 73px;
+}
+.pc3 .s10 .current{
+    background-image: url(shapes/192.svg);
+}
+.pc3 .s11 .current{
+    background-image: url(shapes/193.svg);
+}
+.pc3 .s12 .current{
+    background-image: url(shapes/194.svg);
+}
+.pc3 .s13 .current{
+    background-image: url(shapes/195.svg);
+}
+.pc3 .s14 .current{
+    background-image: url(shapes/196.svg);
+}
+
+.pc4 .s0 .current{
+    background-image: url(shapes/208.svg);
+}
+.pc4 .s0 .position-wrapper{
+    top: 73px;
+    left: 76px;
+}
+.pc4 .s1 .current{
+    background-image: url(shapes/209.svg);
+}
+.pc4 .s1 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s2 .current{
+    background-image: url(shapes/210.svg);
+}
+.pc4 .s2 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s3 .current{
+    background-image: url(shapes/211.svg);
+}
+.pc4 .s3 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s4 .current{
+    background-image: url(shapes/212.svg);
+}
+.pc4 .s4 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s5 .current{
+    background-image: url(shapes/213.svg);
+}
+.pc4 .s5 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s6 .current{
+    background-image: url(shapes/214.svg);
+}
+.pc4 .s6 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s7 .current{
+    background-image: url(shapes/215.svg);
+}
+.pc4 .s7 .position-wrapper{
+    left: 56px;
+}
+.pc4 .s8 .current{
+    background-image: url(shapes/216.svg);
+}
+.pc4 .s9 .current{
+    background-image: url(shapes/217.svg);
+}
+
+.pc5 .s0 .current{
+    background-image: url(shapes/229.svg);
+}
+.pc5 .s0 .position-wrapper{
+    top: 105px;
+    left: 105px;
+}
+.pc5 .s1 .current{
+    background-image: url(shapes/230.svg);
+}
+.pc5 .s1 .position-wrapper{
+    left: 90px;
+}
+.pc5 .s2 .current{
+    background-image: url(shapes/231.svg);
+}
+.pc5 .s2 .position-wrapper{
+    left: 90px;
+}
+.pc5 .s3 .current{
+    background-image: url(shapes/232.svg);
+}
+.pc5 .s3 .position-wrapper{
+    left: 90px;
+}
+.pc5 .s4 .current{
+    background-image: url(shapes/233.svg);
+}
+.pc5 .s4 .position-wrapper{
+    left: 30px;
+}
+.pc5 .s5 .current{
+    background-image: url(shapes/234.svg);
+}
+.pc5 .s6 .current{
+    background-image: url(shapes/235.svg);
+}
+.pc5 .s7 .current{
+    background-image: url(shapes/236.svg);
+}
+.pc5 .s8 .current{
+    background-image: url(shapes/237.svg);
+}
+.pc5 .s9 .current{
+    background-image: url(shapes/238.svg);
+}
+.pc5 .s10 .current{
+    background-image: url(shapes/239.svg);
+}
+
+.pc1 .p1{
+    background-image: url(shapes/146.svg);
+    top: 8%;
+    left: 10%;
+}
+.pc1 .p2{
+    background-image: url(shapes/148.svg);
+    top: 25%;
+    left: 10%;
+}
+.pc1 .p3{
+    background-image: url(shapes/150.svg);
+    top: 20%;
+    left: 20%;
+}
+
+.pc2 .p1{
+    background-image: url(shapes/168.svg);
+    top: 3%;
+    left: 10%;
+}
+.pc2 .p2{
+    background-image: url(shapes/170.svg);
+    top: 10%;
+    left: 25%;
+    height: 3%;
+}
+.pc2 .p3{
+    background-image: url(shapes/172.svg);
+    top: 16%;
+    left: 10%;
+    height: 30% !important;
+}
+.pc2 .p4{
+    background-image: url(shapes/174.svg);
+    top: 18%;
+    left: 25%;
+    height: 10% !;
+}
+.pc2 .p5{
+    background-image: url(shapes/176.svg);
+    top: 40%;
+    left: 10%;
+}
+.pc2 .p6{
+    background-image: url(shapes/178.svg);
+    top: 40%;
+    left: 25%;
+}
+.pc2 .p7{
+    background-image: url(shapes/180.svg);
+    top: 28%;
+    left: 25%;
+    height: 10% !important;
+}
+
+.pc3 .p1{
+    background-image: url(shapes/198.svg);
+    top: 8%;
+    left: 6%;
+}
+.pc3 .p2{
+    background-image: url(shapes/200.svg);
+    top: 18%;
+    left: 6%;
+}
+.pc3 .p3{
+    background-image: url(shapes/202.svg);
+    top: 8%;
+    left: 20%;
+}
+.pc3 .p4{
+    background-image: url(shapes/204.svg);
+    top: 18%;
+    left: 20%;
+}
+.pc3 .p5{
+    background-image: url(shapes/206.svg);
+    top: 35%;
+    left: 6%;
+}
+
+.pc4 .p1{
+    background-image: url(shapes/219.svg);
+    top: 8%;
+    left: 6%;
+}
+.pc4 .p2{
+    background-image: url(shapes/221.svg);
+    top: 5%;
+    left: 25%;
+    height: 30% !important;
+    width: 5% !important;
+}
+.pc4 .p3{
+    background-image: url(shapes/223.svg);
+    top: 25%;
+    left: 6%;
+    height: 5% !important;
+}
+.pc4 .p4{
+    background-image: url(shapes/225.svg);
+    top: 30%;
+    left: 22%;
+    width: 15% !important;
+}
+.pc4 .p5{
+    background-image: url(shapes/227.svg);
+    top: 35%;
+    left: 6%;
+}
+
+.pc5 .p1{
+    background-image: url(shapes/241.svg);
+    top: 8%;
+    left: 8%;
+}
+.pc5 .p2{
+    background-image: url(shapes/243.svg);
+    top: 8%;
+    left: 22%;
+}
+.pc5 .p3{
+    background-image: url(shapes/245.svg);
+    top: 27%;
+    left: 10%;
+}
+.pc5 .p4{
+    background-image: url(shapes/247.svg);
+    top: 22%;
+    left: 22%;
+}

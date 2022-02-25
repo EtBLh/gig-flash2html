@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="141" height="239" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+
+var scalingGrids = {};
+var boundRects = {};
+function shape84(ctx,ctrans,frame,ratio,time){
+	var pathData="M 1125 -1712 Q 1230 -1624 1212 -1427 1202 -1329 1172 -1248 1236 -1075 1255 -981 L 1268 -963 Q 1357 -830 1398 -685 1431 -563 1420 -484 L 1416 -462 Q 1470 -405 1452 -238 1433 -64 1266 -42 L 1201 -40 1200 -39 Q 1158 48 1105 124 1041 212 960 284 833 395 663 464 L 680 470 Q 825 521 1002 690 L 981 735 Q 1105 834 1138 868 1176 909 1225 937 1266 960 1284 960 1310 959 1419 1060 1535 1170 1527 1224 1505 1249 1463 1180 1436 1136 1386 1099 L 1340 1070 1408 1134 Q 1477 1210 1482 1268 1489 1361 1416 1238 L 1285 1070 1350 1172 Q 1416 1292 1400 1348 1385 1404 1331 1277 1276 1151 1221 1100 L 1189 1214 Q 1134 1288 1137 1176 L 1155 1066 Q 1160 1031 1118 988 L 935 828 886 929 783 837 670 768 Q 700 844 738 1051 L 759 1174 774 1309 779 1454 Q 777 1499 754 1531 L 787 1647 Q 806 1746 897 1863 754 1919 239 2065 L 137 1801 133 1751 58 2019 -491 1942 -366 1475 -368 1473 Q -398 1442 -400 1420 L -396 1352 Q -395 1332 -349 1205 L -306 1084 -305 1081 -304 1079 -224 844 -240 858 Q -409 1005 -417 984 -423 969 -495 898 L -673 1097 Q -701 1126 -684 1149 -656 1188 -655 1233 -656 1297 -679 1281 -699 1266 -708 1226 -716 1195 -742 1237 -768 1279 -772 1334 -778 1409 -807 1402 -823 1362 -827 1284 L -827 1223 -903 1287 Q -986 1358 -992 1347 -997 1336 -957 1274 L -915 1213 Q -1058 1320 -1070 1291 -1076 1271 -920 1179 L -763 1090 Q -722 998 -564 832 L -578 818 Q -573 761 -375 588 L -251 484 Q -350 451 -430 411 -528 389 -625 285 -690 227 -728 160 L -765 82 Q -842 -86 -792 -287 L -768 -474 Q -748 -601 -700 -728 L -740 -757 -772 -805 Q -834 -1017 -671 -1139 -574 -1213 -421 -1242 L -418 -1257 -424 -1255 Q -406 -1347 -251 -1458 -173 -1513 -100 -1551 -101 -1580 -108 -1609 -122 -1661 -180 -1786 -240 -1916 -141 -1944 -60 -1966 18 -1926 86 -1890 175 -1610 338 -1596 526 -1527 L 723 -1447 Q 791 -1418 814 -1426 868 -1446 887 -1593 903 -1735 1016 -1737 1072 -1739 1125 -1712";
+	ctx.fillStyle=tocolor(ctrans.apply([0,0,0,0.2]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -319 2499 Q -407 2597 -461 2610 -516 2622 -521 2559 -526 2495 -494 2476 L -438 2438 Q -413 2420 -380 2364 L -385 2273 Q -415 1773 -414 1486 -337 1330 -283 1308 -257 1297 -237 1316 -316 1739 -288 2334 -249 2424 -319 2499";
+	ctx.fillStyle=tocolor(ctrans.apply([254,230,196,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -288 2334 Q -316 1739 -237 1316 -257 1297 -283 1308 -337 1330 -414 1486 -415 1773 -385 2273 L -380 2364 Q -413 2420 -438 2438 L -494 2476 Q -526 2495 -521 2559 -516 2622 -461 2610 -407 2597 -319 2499";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -319 2499 Q -249 2424 -288 2334 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 390 2211 Q 327 2046 247 1814 167 1581 96 1487 L 8 1367 Q 125 1292 222 1405 319 1517 370 1775 420 2033 472 2158 524 2284 596 2326 667 2368 694 2388 720 2407 660 2453 599 2499 553 2465 507 2430 477 2392 L 415 2318 390 2211";
+	ctx.fillStyle=tocolor(ctrans.apply([254,230,196,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 390 2211 Q 327 2046 247 1814 167 1581 96 1487 L 8 1367 Q 125 1292 222 1405 319 1517 370 1775 420 2033 472 2158 524 2284 596 2326 667 2368 694 2388 720 2407 660 2453 599 2499 553 2465";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 553 2465 Q 507 2430 477 2392 L 415 2318 390 2211 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -554 404 L -462 458 Q -521 486 -693 672 L -891 894 Q -918 923 -902 946 -873 984 -874 1029 -875 1095 -897 1078 -918 1063 -927 1023 -934 992 -960 1034 -986 1076 -989 1131 -996 1206 -1026 1199 -1041 1159 -1045 1081 L -1045 1019 -1121 1084 Q -1204 1155 -1211 1143 -1215 1134 -1175 1071 L -1134 1010 Q -1276 1117 -1288 1087 -1294 1069 -1138 976 -1061 930 -981 887 -935 783 -740 584 L -554 404";
+	ctx.fillStyle=tocolor(ctrans.apply([254,230,196,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -554 404 L -740 584 Q -935 783 -981 887 -1061 930 -1138 976 -1294 1069 -1288 1087 -1276 1117 -1134 1010 L -1175 1071 Q -1215 1134 -1211 1143 -1204 1155 -1121 1084 L -1045 1019 -1045 1081 Q -1041 1159 -1026 1199 -996 1206 -989 1131 -986 1076 -960 1034 -934 992 -927 1023 -918 1063 -897 1078 -875 1095 -874 1029 -873 984 -902 946 -918 923 -891 894 L -693 672 Q -521 486 -462 458 L -554 404 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -160 1815 L -710 1739 -555 1162 -39 1380 -160 1815";
+	ctx.fillStyle=tocolor(ctrans.apply([204,0,51,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -160 1815 L -39 1380 -555 1162 -710 1739 -160 1815 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 501 1178 L 535 1325 569 1444 Q 588 1543 679 1660 536 1716 21 1862 L -81 1598 -99 1374 Q -52 1328 255 1238 408 1194 501 1178";
+	ctx.fillStyle=tocolor(ctrans.apply([204,0,51,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 501 1178 Q 408 1194 255 1238 -52 1328 -99 1374 L -81 1598 21 1862 Q 536 1716 679 1660 588 1543 569 1444 L 535 1325 501 1178 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 1190 932 Q 1259 1007 1264 1066 1271 1159 1198 1036 L 1067 867 1132 969 Q 1199 1089 1182 1145 1167 1201 1112 1074 1058 948 1003 896 L 971 1011 Q 916 1085 919 973 L 937 863 Q 943 828 900 785 L 541 472 598 404 737 511 Q 884 627 920 665 957 706 1006 734 1048 757 1066 757 1092 756 1200 858 1317 966 1309 1021 1287 1046 1245 977 1218 934 1167 896 L 1122 867 1190 932";
+	ctx.fillStyle=tocolor(ctrans.apply([254,230,196,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 1190 932 Q 1259 1007 1264 1066 1271 1159 1198 1036 L 1067 867 1132 969 Q 1199 1089 1182 1145 1167 1201 1112 1074 1058 948 1003 896 L 971 1011 Q 916 1085 919 973 L 937 863 Q 943 828 900 785 L 541 472 598 404 737 511 Q 884 627 920 665 957 706 1006 734 1048 757 1066 757 1092 756 1200 858 1317 966 1309 1021 1287 1046 1245 977 1218 934 1167 896 L 1122 867 1190 932 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -719 687 L -797 615 Q -791 558 -594 385 L -395 223 -256 431 Q -285 503 -458 654 -627 802 -635 780 -641 765 -719 687";
+	var grd=ctx.createLinearGradient(-708.25,712.0,-317.75,296.0);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([253,253,62,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,159,17,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -719 687 Q -641 765 -635 780 -627 802 -458 654 -285 503 -256 431 L -395 223 -594 385 Q -791 558 -797 615 L -719 687 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -524 881 L -490 907 Q -428 944 -329 968 -17 1046 541 971 L 556 1106 Q 88 1200 -290 1108 -409 1079 -504 1035 L -567 1002 -524 881";
+	ctx.fillStyle=tocolor(ctrans.apply([247,123,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -523 878 L -522 876 Q -431 624 -421 557 -410 480 -423 310 L -439 155 -52 224 Q 305 211 462 267 607 318 784 487 L 668 726 565 634 452 565 Q 482 641 520 848 L 541 971 Q -17 1046 -329 968 -428 944 -490 907 L -524 881 -523 878 M 556 1106 L 561 1251 Q 555 1397 324 1411 254 1414 121 1407 L -63 1400 Q -207 1405 -386 1355 -548 1309 -586 1270 -616 1239 -618 1217 L -614 1149 Q -613 1129 -567 1002 L -504 1035 Q -409 1079 -290 1108 88 1200 556 1106";
+	var grd=ctx.createLinearGradient(547.75,490.5,-539.75,1059.5);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([253,253,62,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,159,17,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 541 971 L 520 848 Q 482 641 452 565 L 565 634 668 726 784 487 Q 607 318 462 267 305 211 -52 224 L -439 155 -423 310 Q -410 480 -421 557 -431 624 -522 876 L -523 878";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 541 971 L 556 1106 561 1251 Q 555 1397 324 1411 254 1414 121 1407 L -63 1400 Q -207 1405 -386 1355 -548 1309 -586 1270 -616 1239 -618 1217 L -614 1149 Q -613 1129 -567 1002 L -524 881";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -180 408 L -227 319 Q -159 238 97 207 L 340 193 Q 395 340 354 405 340 428 309 447 L 258 476 Q 187 525 105 551 -10 590 -67 547 -122 507 -180 408";
+	var grd=ctx.createLinearGradient(-46.25,560.25,198.25,115.75);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([253,253,62,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,255,255,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -180 408 Q -122 507 -67 547 -10 590 105 551 187 525 258 476 L 309 447 Q 340 428 354 405 395 340 340 193 L 97 207 Q -159 238 -227 319 L -180 408 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -436 223 L -378 253 Q -299 281 -196 267 L -198 294 Q -202 329 -217 361 -261 466 -428 522 L -436 223";
+	var grd=ctx.createLinearGradient(-342.25,369.5,-287.75,34.5);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([253,253,62,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,255,255,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -436 223 L -378 253 Q -299 281 -196 267 L -198 294 Q -202 329 -217 361 -261 466 -428 522 L -436 223 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 784 -1352 Q 796 -1330 879 -1238 970 -1128 1020 -1018 1182 -665 982 -242 783 179 290 313 136 355 -29 363 L -164 363 Q -788 233 -947 -43 -1015 -161 -1019 -333 -1020 -451 -986 -677 -938 -986 -723 -1292 -615 -1446 -518 -1537 -57 -1987 784 -1352";
+	ctx.fillStyle=tocolor(ctrans.apply([254,230,196,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 784 -1352 Q -57 -1987 -518 -1537 -615 -1446 -723 -1292 -938 -986 -986 -677 -1020 -451 -1019 -333 -1015 -161 -947 -43 -788 233 -164 363 L -29 363 Q 136 355 290 313 783 179 982 -242 1182 -665 1020 -1018 970 -1128 879 -1238 796 -1330 784 -1352 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -631 212 Q -789 188 -942 -48 -1097 -285 -977 -594 -995 -618 -858 -608 -671 -593 -551 -456 -431 -318 -448 -137 -467 44 -610 161 -659 199 -631 212";
+	drawPath(ctx,pathData,false);
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,0.0]));
+	ctx.fill("evenodd");
+	ctx.save();
+	ctx.clip();
+	ctx.transform(-0.002655029296875,0.02728271484375,-0.0284423828125,-0.002197265625,-902,-172);
+	var grd=ctx.createRadialGradient(0.0,0,0,0,0,16384);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,119,187,0.5019608])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,255,255,0.0])));
+	ctx.fillStyle = grd;
+	ctx.fillRect(-16384,-16384,32768,32768);
+	ctx.restore();
+	var pathData="M 312 -1 Q 243 -175 313 -344 384 -512 552 -576 643 -611 733 -605 1028 -315 900 -101 752 147 466 201 363 126 312 -1";
+	drawPath(ctx,pathData,false);
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,0.0]));
+	ctx.fill("evenodd");
+	ctx.save();
+	ctx.clip();
+	ctx.transform(0.0256195068359375,-0.009674072265625,0.0106048583984375,0.0264434814453125,722,-157);
+	var grd=ctx.createRadialGradient(0.0,0,0,0,0,16384);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,119,201,0.5019608])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([255,255,255,0.0])));
+	ctx.fillStyle = grd;
+	ctx.fillRect(-16384,-16384,32768,32768);
+	ctx.restore();
+	var pathData="M 931 -549 L 933 -553 Q 1072 -724 1164 -689 1256 -653 1233 -441 1215 -267 1048 -245 L 935 -249 901 -256 931 -549";
+	ctx.fillStyle=tocolor(ctrans.apply([254,230,196,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 901 -256 L 935 -249 1048 -245 Q 1215 -267 1233 -441 1256 -653 1164 -689 1072 -724 933 -553 L 931 -549 M 901 -256 L 884 -259";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -792 -891 Q -904 -909 -959 -960 L -991 -1008 Q -1052 -1220 -889 -1343 -789 -1418 -631 -1447 L -595 -1451 Q -558 -1354 -672 -1112 -728 -992 -792 -891";
+	var grd=ctx.createLinearGradient(-712.0,-1422.25,-944.0,-919.75);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,176,60,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([187,94,0,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -792 -891 Q -728 -992 -672 -1112 -558 -1354 -595 -1451 L -631 -1447 Q -789 -1418 -889 -1343 -1052 -1220 -991 -1008 L -959 -960 Q -904 -909 -792 -891 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 602 -694 L 613 -615 Q 332 -932 25 -1052 -72 -1089 -158 -1102 L -226 -1108 Q -206 -1030 -127 -856 -376 -973 -529 -1178 -577 -1243 -610 -1307 L -633 -1360 Q -657 -1440 -615 -1513 -570 -1590 -460 -1636 -192 -1751 317 -1637 806 -1528 1049 -1166 1139 -1033 1179 -888 1212 -766 1202 -687 1185 -567 1051 -507 1001 -486 965 -489 927 -490 933 -518 954 -590 921 -661 917 -555 793 -483 783 -597 739 -704 L 696 -789 Q 645 -790 602 -694 581 -840 555 -905 581 -840 602 -694";
+	var grd=ctx.createLinearGradient(-347.25,-1456.25,815.25,-943.75);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,176,60,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([187,94,0,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 602 -694 Q 645 -790 696 -789 L 739 -704 Q 783 -597 793 -483 917 -555 921 -661 954 -590 933 -518 927 -490 965 -489 1001 -486 1051 -507 1185 -567 1202 -687 1212 -766 1179 -888 1139 -1033 1049 -1166 806 -1528 317 -1637 -192 -1751 -460 -1636 -570 -1590 -615 -1513 -657 -1440 -633 -1360 L -610 -1307 Q -577 -1243 -529 -1178 -376 -973 -127 -856 -206 -1030 -226 -1108 L -158 -1102 Q -72 -1089 25 -1052 332 -932 613 -615 L 602 -694";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 602 -694 Q 581 -840 555 -905";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 308 -1731 Q 406 -1696 505 -1650 573 -1622 596 -1630 650 -1650 669 -1796 685 -1938 798 -1940 855 -1942 907 -1915 1012 -1827 994 -1630 985 -1532 954 -1451 1054 -1179 1045 -1105 386 -1519 -194 -1530 -376 -1533 -526 -1496 L -642 -1458 Q -624 -1550 -469 -1661 -392 -1717 -319 -1754 -320 -1784 -327 -1812 -340 -1864 -398 -1990 -458 -2118 -359 -2146 -278 -2170 -200 -2129 -132 -2093 -43 -1813 120 -1799 308 -1731";
+	var grd=ctx.createLinearGradient(-556.75,-1843.5,1126.75,-1470.5);
+	grd.addColorStop(0.0,tocolor(ctrans.apply([255,60,60,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([186,1,75,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 308 -1731 Q 120 -1799 -43 -1813 -132 -2093 -200 -2129 -278 -2170 -359 -2146 -458 -2118 -398 -1990 -340 -1864 -327 -1812 -320 -1784 -319 -1754 -392 -1717 -469 -1661 -624 -1550 -642 -1458 L -526 -1496 Q -376 -1533 -194 -1530 386 -1519 1045 -1105 1054 -1179 954 -1451 985 -1532 994 -1630 1012 -1827 907 -1915 855 -1942 798 -1940 685 -1938 669 -1796 650 -1650 596 -1630 573 -1622 505 -1650 406 -1696 308 -1731 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="butt";
+	ctx.lineJoin="miter";
+	ctx.miterLimit=3.0;
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -297 -437 Q -318 -336 -411 -345 -390 -336 -370 -329 -325 -303 -298 -243";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -462 -33 Q -416 -96 -325 -61 -233 -26 -251 34 -323 -29 -462 -33";
+	ctx.fillStyle=tocolor(ctrans.apply([255,153,102,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -462 -33 Q -416 -96 -325 -61 -233 -26 -251 34 -323 -29 -462 -33 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 354 -238 L 366 -237 373 -229 372 -218 Q 369 -213 362 -211 L 350 -211 343 -219 344 -230 354 -238 M 397 -128 Q 401 -133 406 -134 L 417 -134 Q 423 -133 425 -128 L 422 -118 413 -111 402 -112 396 -119 397 -128 M -768 -361 L -759 -351 -760 -337 -770 -329 -784 -330 -791 -340 -792 -354 -780 -362 -768 -361 M -861 -362 L -871 -355 -883 -355 -890 -363 -889 -374 -879 -382 -867 -381 -860 -373 Q -858 -367 -861 -362 M -816 -279 L -809 -272 Q -807 -267 -811 -263 L -819 -256 -831 -256 -837 -263 -836 -272 -827 -279 -816 -279 M 463 -185 L 449 -185 Q 444 -189 442 -196 L 442 -209 Q 445 -215 453 -217 L 465 -217 474 -206 472 -193 463 -185";
+	ctx.fillStyle=tocolor(ctrans.apply([204,102,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 137 -703 Q 329 -615 446 -647";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 389 -459 Q 381 -383 321 -335 262 -287 186 -295 111 -304 63 -363 15 -423 23 -498 31 -574 90 -622 150 -670 226 -662 302 -654 350 -594 398 -535 389 -459";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 389 -459 Q 381 -383 321 -335 262 -287 186 -295 111 -304 63 -363 15 -423 23 -498 31 -574 90 -622 150 -670 226 -662 302 -654 350 -594 398 -535 389 -459 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M 218 -606 Q 280 -599 320 -550 360 -502 353 -439 346 -377 298 -337 249 -297 187 -304 124 -311 85 -360 45 -409 52 -471 58 -533 107 -573 156 -613 218 -606";
+	var grd=ctx.createLinearGradient(107.75,-573.0,298.25,-337.0);
+	grd.addColorStop(0.00392156862745098,tocolor(ctrans.apply([129,241,116,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([12,116,12,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -583 -859 Q -689 -774 -832 -799";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -496 -606 Q -504 -534 -561 -489 -617 -443 -689 -451 -762 -458 -807 -515 -853 -571 -845 -643 -837 -715 -781 -761 -724 -806 -652 -798 -581 -791 -535 -735 -490 -678 -496 -606";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -496 -606 Q -504 -534 -561 -489 -617 -443 -689 -451 -762 -458 -807 -515 -853 -571 -845 -643 -837 -715 -781 -761 -724 -806 -652 -798 -581 -791 -535 -735 -490 -678 -496 -606 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([204,102,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+	var pathData="M -657 -745 Q -598 -739 -561 -692 -523 -646 -529 -586 -535 -527 -582 -489 -628 -452 -688 -458 -747 -465 -784 -511 -823 -557 -815 -617 -810 -676 -762 -714 -717 -752 -657 -745";
+	var grd=ctx.createLinearGradient(-762.5,-714.25,-581.5,-489.75);
+	grd.addColorStop(0.00392156862745098,tocolor(ctrans.apply([129,241,116,1])));
+	grd.addColorStop(1.0,tocolor(ctrans.apply([12,116,12,1])));
+	ctx.fillStyle = grd;
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+function sprite85(ctx,ctrans,frame,ratio,time){
+	ctx.save();
+	ctx.transform(1,0,0,1,64.9,108.25);
+	var clips = [];
+	var frame_cnt = 1;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("shape84",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			break;
+	}
+	ctx.restore();
+}
+
+var frame = -1;
+var time = 0;
+var frames = [];
+frames.push(0);
+
+var backgroundColor = "#ffffff";
+var originalWidth = 141;
+var originalHeight= 239;
+function nextFrame(ctx,ctrans){
+	var oldframe = frame;
+	frame = (frame+1)%frames.length;
+	if(frame==oldframe){time++;}else{time=0;};
+	drawFrame();
+}
+
+function drawFrame(){
+	ctx.fillStyle = backgroundColor;
+	ctx.fillRect(0,0,canvas.width,canvas.height);
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	sprite85(ctx,ctrans,frames[frame],0,time);
+	ctx.restore();
+}
+
+window.setInterval(function(){nextFrame(ctx,ctrans);},33);
+nextFrame(ctx,ctrans);
+</script>
+</body>
+</html>
