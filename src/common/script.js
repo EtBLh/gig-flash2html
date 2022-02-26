@@ -83,3 +83,8 @@ function vadd(a,b){
     [ba, bb] = b;
     return [aa + ba, ab + bb];
 }
+
+function abs(a){
+    if (a < 0) a = -a;
+    return a;
+}

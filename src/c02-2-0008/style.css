@@ -1,0 +1,170 @@
+.bg1{
+    background: url(shapes/79.svg);
+    top: -10%;
+    left: -10%;
+    width: 140%;
+    height: 150%;
+}
+
+.bg2{
+    background-image: url(shapes/82.svg);
+    bottom: -50%;
+    height: 80%;
+    width: 120%;
+    left: -10%;
+}
+
+.bg3{
+    background-image: url(shapes/85.svg);
+    width: 25%;
+    height: 25%;
+    right: 3%;
+    top: 60%;
+    z-index: 100;
+}
+
+.bg4{
+    background-image: url(shapes/84.svg);
+    width: 35%;
+    height: 35%;
+    right: -8%;
+    top: 35%;
+    transform-origin: bottom;
+}
+
+.bg41{
+    transform: rotate(0deg);
+}
+.bg42{
+    transform: rotate(40deg);
+}
+.bg43{
+    transform: rotate(20deg);
+}
+
+.bg5{
+    background-image: url(assets/clockbody.svg);
+    width: 43%;
+    height: 60%;
+    left: 40%;
+    top: 30%;
+    z-index: 200;
+}
+
+.bg6{
+    background-image: url(shapes/184.svg);
+    top: 74%;
+    left: 9%;
+    width: 40%;
+    height: 20%;    
+}
+
+.cake{
+    background-image: url(shapes/185.svg);
+    top: 55%;
+    left: 13%;
+    width: 30%;
+    height: 26%;    
+}
+
+.cake.bouncing{
+    animation: cakebounce 2s infinite ease;
+}
+
+@keyframes cakebounce {
+    0%{ transform: scale(1, 1); }
+    25%{ transform: scale(1.1, 0.9); top: 56%}
+    50%{ transform: scale(0.9, 1.1); top: 54%; }
+    75%{ transform: scale(1.1,0.9);  top: 56%;}
+    100%{ transform: scale(1,1);}
+}
+
+.clockhead{
+    background-image: url(assets/clockhead.png);
+    background-size: 400%;
+    width: 43%;
+    height: 22%;
+    left: 40%;
+    top: 20%;
+    z-index: 200;
+    background-repeat: repeat-x;
+}
+
+
+.clockhead.ringing{
+    animation: ring .15s infinite steps(4);
+    /* background-position: 0px -318px; */
+}
+
+@keyframes ring {
+    to {
+        background-position: -400%;
+    }
+}
+
+.clockcenter{
+    background-color: gray;
+    width: 27px;
+    height: 27px;
+    top: 56%;
+    left: 59%;
+    border-radius: 100%;
+    z-index: 300;
+}
+
+.hand{
+    bottom: 42%;
+    right: 37.9%;
+    width: 19px;
+    z-index: 250;
+    transform-origin: bottom;
+}
+
+.hand:hover{
+    filter: brightness(1.5);
+}
+
+.minutehand{
+    background-image: url(shapes/189.svg);
+    height: 93px;
+    transform: rotate(270deg);
+}
+
+.hourhand{
+    background-image: url(shapes/191.svg);
+    height: 80px;
+    z-index: 251;
+    right: 38%;
+}
+
+.target{
+    background-image: url(shapes/195.svg);
+    width: 32%;
+    height: 22%;
+    top: 13%;
+    left: 9%;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    line-height: 7.5rem;
+}
+
+.teacher{
+    top: 40%;
+    left: 25%;
+    z-index: 400;
+}
+
+.good{
+    background-image: url(shapes/204.svg);
+    top: 50%;
+    left: 40%;
+    z-index: 400;
+    width: 40%;
+    height: 20%;
+    display: none;
+}
+
+.good.show{
+    display: block;
+}
