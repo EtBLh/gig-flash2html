@@ -1,0 +1,199 @@
+.bg1{
+    top: -94%;
+    left: -20%;
+    height: 220%;
+    width: 160%;
+    background-image: url(shapes/72.svg);
+}
+
+.bg2{
+    top: -40%;
+    left: 0%;
+    height: 70%;
+    width: 50%;
+    background-image: url(shapes/73.svg);
+}
+
+.bg3{
+    top: 10%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-image: url(shapes/74.svg);
+}
+
+.bg4{
+    top: -2%;
+    right: -33%;
+    height: 70%;
+    width: 50%;
+    background-image: url(shapes/73.svg);
+}
+
+
+.marble{
+    background-image: url(assets/throwing_ball.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 189px;
+    height: 234px;
+}
+
+.marble.throwing{   
+    animation: bouncing 5s infinite steps(149);
+}
+
+@keyframes bouncing {
+    to{ background-position: -28161px 0px;}
+}
+
+.dest1{
+    background-image: url(sprites/DefineSprite_92/1.svg);
+    width: 25%;
+    height: 25%;
+    left: 50%;
+    bottom: 32%;
+    transform: translate(-50%, 0);
+}
+
+.dest2{
+    background-image: url(sprites/DefineSprite_94/1.svg);
+    width: 20%;
+    height: 20%;
+    transform: translate(-50%, 0);
+}
+
+.dest2.left{
+    left: 20%;
+    bottom: 35%;
+}
+.dest2.right{
+    left: 80%;
+    bottom: 35%;
+}
+
+.dest3{
+    background-image: url(sprites/DefineSprite_98/1.svg);
+    width: 18%;
+    height: 18%;
+    transform: translate(-50%, 0);
+    bottom: 51%;
+}
+
+.dest3.left{
+    left: 35%;
+}
+.dest3.right{
+    left: 65%;
+}
+
+.dest4{
+    background-image: url(sprites/DefineSprite_102/1.svg);
+    width: 13%;
+    height: 13%;
+    left: 50%;
+    bottom: 65%;
+    transform: translate(-50%, 0);
+}
+
+.remaining_marble{
+    background-image: url(shapes/104.svg);
+    width: 70px;
+    height: 70px;
+    top: 1rem;
+    right: 1rem;
+}
+
+.rm1 {right: 1rem;}
+.rm2 {right: calc(2rem + 10%);}
+.rm3 {right: calc(3rem + 20%);}
+.rm4 {right: calc(4rem + 30%);}
+.rm5 {right: calc(5rem + 40%);}
+
+.dest.glowing{
+    filter: drop-shadow(0px 0px 16px red);
+}
+
+.power-measure{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(assets/360.svg);
+    width: 238px;
+    height: 23px;
+    bottom: 23px; 
+    left: 337px;
+}
+
+.power-measure-top{
+    content: ' ';
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(assets/365.svg);
+    width: 332px;
+    height: 23px;
+    bottom: 25px; 
+    left: 243px; 
+}
+
+.power-measure-bar{
+    background-color: red;
+    width: 212px;
+    height: 17px;
+    bottom: 26px; 
+    left: 340px;
+    border-radius: 23px;
+    overflow: hidden;
+}
+
+.angle-indicator{
+    bottom: 23%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-image: url(shapes/114.svg);
+    width: 5%;
+    height: 12%;
+    transform-origin: 0% 150%;
+    transform: rotate(90deg) translate(-50%, 0);
+}
+
+.score-back{
+    background-image: url(shapes/4.svg);
+    width: 45%;
+    height: 60%;
+    left: 45%;
+    top: 15%;
+    animation: score-rotate 1.5s linear  infinite;
+    transform-origin: center;
+    display: none;
+}
+
+.score{
+    color: red;
+    font-family: 'Noto Sans';
+    font-size: 2rem;
+    top: 40%;
+    left: 60%;
+    display: none;
+}
+
+.score.show, .score-back.show{
+    display: block;
+}
+
+@keyframes score-rotate {
+    to{transform: rotate(360deg);}
+}
+
+.result-view{
+    width: 100%;
+    background-color: #ffffffaa;
+    margin-bottom: 2rem;
+    height: 20%;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+}

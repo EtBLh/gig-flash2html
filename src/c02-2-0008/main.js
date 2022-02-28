@@ -32,7 +32,6 @@
         target_deg[0] = (target[0]%12)*360/12 + target[1]/60*360/12;
         target_deg[1] = target[1]/60*360;
         console.log(target_deg, target);
-
     }
 
     const animate = () => {

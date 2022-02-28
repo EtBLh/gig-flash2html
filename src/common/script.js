@@ -72,6 +72,14 @@ let hide_element = (el) => {
     el.classList.remove("show");
 }
 
+let hide_for_interval = (el, interval) => {
+    let temp = el.style["display"];
+    el.style["display"] = "none";
+    setTimeout(() => {
+        el.style["display"] = temp;
+    }, interval);
+}
+
 function mod(n, m) {
     return ((n % m) + m) % m;
 }

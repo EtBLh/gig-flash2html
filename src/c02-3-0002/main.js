@@ -16,9 +16,11 @@ let game = (() => {
     let score = 0;
     let timer = 60;
 
+    let current_ctop = 0;
+
     let start = () => {
         started = true;
-        timer = 10;
+        timer = 60;
         score = 0;
         let time = setInterval(() => {
             if (timer <= 0){
@@ -45,6 +47,8 @@ let game = (() => {
         current_marble = new_marble;
         holding = true;
         veloc_vec = [-1.5,0];
+        let holdingm = document.querySelector(".marble.holding");
+        holdingm.style["top"] = current_ctop-(window.innerHeight-frame.clientHeight)/2 + 10 + "px";
     }
 
     return {
@@ -108,6 +112,7 @@ let game = (() => {
                 let holdingm = document.querySelector(".marble.holding");
                 if (holdingm)
                     holdingm.style["top"] = e.clientY-(window.innerHeight-frame.clientHeight)/2 + 10 + "px";
+                current_ctop = e.clientY;
             });
         },
         start: start,
