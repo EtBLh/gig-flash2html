@@ -76,7 +76,7 @@
         let y = e.clientY - rect.top;
         let angle = get_angle([x,y]);
         drag_elem.style["transform"] = `rotate(${angle}deg)`;
-        if (abs(target_deg[holding] - angle) <= 30){ 
+        if (abs(target_deg[holding] - angle) <= 50){ 
             correct[holding] = true;
         }
         else {correct[holding] = false;}

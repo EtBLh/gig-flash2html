@@ -150,14 +150,14 @@
 }
 
 .teacher{
-    top: 40%;
+    top: 25%;
     left: 25%;
     z-index: 400;
 }
 
 .good{
     background-image: url(shapes/204.svg);
-    top: 50%;
+    top: 35%;
     left: 40%;
     z-index: 400;
     width: 40%;
