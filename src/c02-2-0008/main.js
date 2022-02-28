@@ -2,12 +2,25 @@
 (() => {
 
     cursor_controller.star_on();
+    let playing = false;
+    let finished = 0;
 
     document.querySelector(".start-btn").addEventListener("click",e => {
         document.querySelector(".start-screen").style["display"] = "none";
         cursor_controller.star_off();
         cursor_controller.frame_on();
+        playing = true;
     });
+
+    document.querySelector(".restart").addEventListener("click", e => {
+        finished = 0;
+        hide_element(document.querySelector(".end-screen"));
+    });
+
+    let game_over = () => {
+        show_element(document.querySelector(".end-screen"));
+
+    }
 
     const vector_center = [485.5, 350];
     const get_angle = (vec) => {
@@ -98,6 +111,10 @@
             correct[1] = false;
             animate();
             next();
+            finished++;
+            if (finished >= 5) {
+                game_over();
+            }
         }
     });
 
