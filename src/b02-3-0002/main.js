@@ -5,7 +5,7 @@ let game = (() => {
         rolls: document.querySelectorAll(".roll .view"),
         indicator: document.querySelector(".indicator"),
         right: document.querySelector(".right"),
-        timer: document.query
+        timer: document.querySelector(".timer")
     }
 
     let pulled = [0,0,0];
@@ -26,8 +26,10 @@ let game = (() => {
     let start = () => {
         countdown = setInterval(() => {
             timer--;
-            
             element.timer.innerHTML=`00:${timer/10<1?"0":""}${timer}`;
+            if (timer <= 0){
+                clearInterval(countdown);
+            }
         },1000);
     }
 
