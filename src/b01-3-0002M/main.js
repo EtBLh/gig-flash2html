@@ -77,7 +77,7 @@ let game = () => {
                 teacher.classList.remove("sad");
                 wrong.classList.remove("show");
                 rs.classList.remove("show");
-            }, 1000)
+            }, 1000);
         }
     }
 
@@ -99,8 +99,22 @@ let game = () => {
         document.querySelector(".start-screen").style["display"] = "none";
         main.start();
         cursor_controller.star_off();
-        cursor_controller.frame_on(); 
+        cursor_controller.frame_on();
+        timer.start(); 
     });
+
+    timer.set_cb(() => {
+        console.log("finished");
+        show_element(document.querySelector(".end-screen"));
+    });
+
+    document.querySelector(".restart").addEventListener("click", (e) => {
+        timer.start();
+        hide_element(document.querySelector(".end-screen"));
+    });
+
+    timer.set_element(document.querySelector(".comtimer"));
+    timer.set_initial(150);
 
 })();
 

@@ -1,0 +1,138 @@
+.bg1{
+    background-image: url(shapes/83.svg);
+    width: 101%;
+    height: 101%;
+    top: -.5%;
+    left: -.5%;
+}
+
+.bg2{
+    background-image: url(shapes/84.svg);
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    opacity: .5;
+}
+
+.bg3{
+    background-image: url(shapes/85.svg);
+    width: 110%;
+    height: 150%;
+    top: -22%;
+    left: -5%;
+}
+
+.rstar{
+    background-image: url(shapes/86.svg);
+    animation: rotatingstar 5s linear infinite; 
+    opacity: .3;
+}
+
+@keyframes rotatingstar {
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+.r1{
+    top: 10%;
+    left: 20%;
+    width: 100px;
+    height: 100px;
+}
+
+.r2{
+    top: 40%;
+    left: 20%;
+    width: 130px;
+    height: 130px;
+}
+
+.r3{
+    top: 20%;
+    left: 60%;
+    width: 200px;
+    height: 200px;
+}
+
+.r4{
+    bottom: 10%;
+    right: 30%;
+    width: 80px;
+    height: 80px;
+}
+
+.emo{
+    width: 180px;
+    height: 250px;
+}
+
+.emo:hover{
+    filter: drop-shadow(0px 0px 20px yellow);
+}
+
+.e1{background-image: url(sprites/DefineSprite_134/emo1.svg);}
+.e2{background-image: url(sprites/DefineSprite_134/emo2.svg);}
+.e3{background-image: url(sprites/DefineSprite_134/emo3.svg);}
+.e4{background-image: url(sprites/DefineSprite_134/emo4.svg);}
+.e5{background-image: url(sprites/DefineSprite_134/emo5.svg);}
+.e6{background-image: url(sprites/DefineSprite_134/emo6.svg);}
+.e7{background-image: url(sprites/DefineSprite_134/emo7.svg);}
+.e8{background-image: url(sprites/DefineSprite_134/emo8.svg);}
+
+.emo.e1{
+    top: 5%;
+    left: 20%;
+}
+.emo.e2{
+    top: 25%;
+    left: 10%;
+}
+.emo.e3{
+    top: 49%;
+    left: 10%;
+}
+.emo.e4{
+    top: 72%;
+    left: 20%;
+}
+
+.emo.e5{
+    top: 5%;
+    right: 20%;
+}
+.emo.e6{
+    top: 25%;
+    right: 10%;
+}
+.emo.e7{
+    top: 49%;
+    right: 10%;
+}
+.emo.e8{
+    top: 72%;
+    right: 20%;
+}
+
+.main-emo{
+    width: 100%;
+    height: 100%;
+    top: 19%;
+    left: 23%;
+}
+
+.emo-text{
+    width: 150px;
+    height: 50px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 3px;
+    text-align: center;
+    font-family: 'Noto Sans';
+    color: gray;
+    font-size: 1.5rem;
+    line-height: 45px;
+}

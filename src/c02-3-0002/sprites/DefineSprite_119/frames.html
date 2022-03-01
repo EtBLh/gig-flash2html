@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="46" height="36" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+
+var scalingGrids = {};
+var boundRects = {};
+function shape118(ctx,ctrans,frame,ratio,time){
+	var pathData="M 47 -568 L 41 -597 Q 41 -653 97 -653 150 -653 153 -597 153 -542 97 -542 59 -542 47 -568 M 347 -634 Q 347 -653 375 -659 392 -652 402 -636 402 -616 375 -603 358 -609 350 -618 347 -607 347 -634 M 321 -515 L 351 -513 354 -485 Q 342 -473 319 -481 313 -494 314 -504 305 -500 321 -515 M 270 -437 Q 279 -399 267 -303 252 -181 240 -137 L 283 -162 Q 281 -177 293 -193 L 323 -224 361 -258 Q 387 -273 412 -249 423 -237 271 -108 L 410 -192 Q 402 -202 402 -212 402 -231 409 -234 L 436 -237 Q 452 -237 464 -222 496 -239 503 -238 521 -236 498 -220 L 397 -142 346 -101 369 -81 Q 369 -60 341 -48 L 317 -62 Q 314 -52 314 -76 L 306 -69 314 -77 314 -79 314 -84 176 -13 175 -9 174 -9 Q 163 8 154 -31 144 -71 -13 -259 -170 -448 -172 -463 -174 -479 -133 -470 -92 -461 1 -341 94 -222 123 -173 L 138 -232 Q 124 -244 120 -268 L 119 -322 Q 119 -372 123 -384 132 -420 175 -420 195 -420 175 -174 L 221 -362 Q 231 -465 237 -472 242 -479 253 -468 259 -487 264 -490 282 -504 275 -470 L 270 -437 M 70 -380 Q 64 -393 65 -402 56 -398 72 -413 L 102 -411 105 -382 70 -380 M 664 -271 L 667 -242 632 -239 Q 625 -252 626 -262 617 -258 633 -273 L 664 -271 M 501 -363 Q 469 -332 437 -363 415 -385 424 -407 L 437 -427 Q 469 -459 501 -427 531 -397 501 -363 M 424 39 L 415 22 Q 415 9 423 1 434 -10 439 -8 L 456 6 Q 468 18 463 39 432 46 424 39 M 288 39 Q 280 43 296 27 L 325 29 Q 332 42 329 57 316 69 293 61 287 48 288 39 M -133 -557 Q -136 -546 -136 -573 -136 -592 -108 -597 -91 -591 -81 -575 -81 -554 -108 -542 L -133 -557 M -208 -270 Q -209 -249 -236 -237 -253 -243 -260 -251 -264 -240 -264 -268 -264 -287 -236 -292 -219 -286 -208 -270";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+function sprite119(ctx,ctrans,frame,ratio,time){
+	ctx.save();
+	ctx.transform(1,0,0,1,13.2,32.95);
+	var clips = [];
+	var frame_cnt = 5;
+	frame = frame % frame_cnt;
+	switch(frame){
+		case 0:
+			place("shape118",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 1:
+			place("shape118",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 2:
+			place("shape118",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 3:
+			place("shape118",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			break;
+		case 4:
+			place("shape118",canvas,ctx,[0.05,0.0,0.0,0.05,0.0,0.0],ctrans,1,0,0,time);
+			break;
+	}
+	ctx.restore();
+}
+
+var frame = -1;
+var time = 0;
+var frames = [];
+frames.push(0);
+frames.push(1);
+frames.push(2);
+frames.push(3);
+frames.push(4);
+
+var backgroundColor = "#ffffff";
+var originalWidth = 46;
+var originalHeight= 36;
+function nextFrame(ctx,ctrans){
+	var oldframe = frame;
+	frame = (frame+1)%frames.length;
+	if(frame==oldframe){time++;}else{time=0;};
+	drawFrame();
+}
+
+function drawFrame(){
+	ctx.fillStyle = backgroundColor;
+	ctx.fillRect(0,0,canvas.width,canvas.height);
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	sprite119(ctx,ctrans,frames[frame],0,time);
+	ctx.restore();
+}
+
+window.setInterval(function(){nextFrame(ctx,ctrans);},33);
+nextFrame(ctx,ctrans);
+</script>
+</body>
+</html>

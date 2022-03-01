@@ -11,8 +11,10 @@ html, body{
     font-size: 16px;
 }
 
-* {
+body * {
     box-sizing: border-box;
+    background-size: initial;
+    background-repeat: initial;
 }
 
 #frame{

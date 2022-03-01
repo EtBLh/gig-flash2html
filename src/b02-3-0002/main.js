@@ -5,7 +5,8 @@ let game = (() => {
         rolls: document.querySelectorAll(".roll .view"),
         indicator: document.querySelector(".indicator"),
         right: document.querySelector(".right"),
-        timer: document.querySelector(".timer")
+        timer: document.querySelector(".timer"),
+        over: document.querySelector(".over")
     }
 
     let pulled = [0,0,0];
@@ -21,26 +22,44 @@ let game = (() => {
     ];
 
     let countdown;
-    let timer;
+    let timer = 60;
 
     let start = () => {
         countdown = setInterval(() => {
-            timer--;
-            element.timer.innerHTML=`00:${timer/10<1?"0":""}${timer}`;
             if (timer <= 0){
                 clearInterval(countdown);
+                element.over.classList.add("timesup");
+                document.querySelector(".end-screen").classList.add("show");
+                document.querySelector(".result-view>.number").innerHTML = current_idx;
+                document.querySelector(".timer").innerHTML = "00:00";
+                cursor_controller.star_on();
+                cursor_controller.frame_off();
+                return;
             }
+            timer--;
+            let time_str = `00:${timer/10<1?"0":""}${timer}`;
+            element.timer.innerHTML = time_str;
         },1000);
     }
 
     let win = () => {
         clearInterval(countdown);
-        
+        element.over.classList.add("gameover");
+        document.querySelector(".end-screen").classList.add("show");
+        document.querySelector(".result-view>.number").innerHTML = current_idx;
+        document.querySelector(".timer").innerHTML = "00:00";
+        cursor_controller.star_on();
+        cursor_controller.frame_off();
+        return;
     }
 
     return{
         start: start,
         restart: () => {
+            document.querySelector(".end-screen").classList.remove("show");
+            current_idx = 0;
+            element.indicator.className = "element indicator "+target[current_idx];
+            timer = 60;
             start();
         },
         init: () => {
@@ -106,4 +125,3 @@ let game = (() => {
 
     document.querySelector(".restart").addEventListener("click", game.restart);
 })();
-

@@ -115,6 +115,17 @@
     }
 }
 
+.timer{
+    top: 1rem;
+    left: 1rem;
+    background: white;
+    color: blue;
+    font-size: 2.5rem;
+    font-family: 'Noto Sans', serif;
+    padding: 0rem .5rem;
+    border-radius: 1rem;
+}
+
 .right{
     background-image: url(shapes/89.svg);
     width: 20%;
@@ -185,4 +196,30 @@
 }
 .indicator.p{
     background-image: url(sprites/DefineSprite_47/2.svg);
+}
+
+.over{
+    width: 100%;
+    height: 18%;
+    margin-top: 5rem;
+}
+
+.timesup{
+    background-image: url(shapes/75.svg);
+}
+
+.gameover{
+    background-image: url(shapes/81.svg);
+}
+
+.result-view{
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff88;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.number{
+    font-size: 2rem;
 }

@@ -1,0 +1,30 @@
+stop();
+var my_sound1 = new Sound();
+my_sound1.attachSound("bgmusic05.wav");
+my_sound1.start(2,1000);
+var myStart = new Sound();
+myStart.attachSound("開始玩");
+var my_os1 = new Sound();
+my_os1.attachSound("01-旁白_HELLO_01.wav");
+var my_os2 = new Sound();
+my_os2.attachSound("02-SAD 破杯子.wav");
+var my_os3 = new Sound();
+my_os3.attachSound("03-happy_zoo.wav");
+var my_os4 = new Sound();
+my_os4.attachSound("04-surprise_毛毛蟲.wav");
+var my_os5 = new Sound();
+my_os5.attachSound("05-sleep_zoo tired.wav");
+var my_os6 = new Sound();
+my_os6.attachSound("06-angry_臭哥哥喝可樂2.wav");
+var my_os7 = new Sound();
+my_os7.attachSound("07-shy_隔壁阿姨.wav");
+var my_os8 = new Sound();
+my_os8.attachSound("08-難過_娃娃壞.wav");
+var my_os9 = new Sound();
+my_os9.attachSound("09-happy_海邊玩.wav");
+Mouse.hide();
+this.onEnterFrame = function()
+{
+   star._x = _xmouse;
+   star._y = _ymouse;
+};

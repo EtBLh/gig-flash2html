@@ -1,0 +1,30 @@
+var _rx = 0;
+var _ry = 0;
+var _atan = 0;
+var _atan1 = 0;
+var intervalId;
+var count = 0;
+var maxCount = 10;
+var duration = 60;
+var _key = 0;
+var _power = 0;
+var vxMax = 0;
+var vyMax = 0;
+var vxDis = 0;
+var vyDis = 0;
+var mySound = new Sound();
+mySound.attachSound("bgmusic05.wav");
+mySound.start(2,1000);
+var myStart = new Sound();
+myStart.attachSound("開始玩");
+var myFalse = new Sound();
+myFalse.attachSound("錯誤");
+Mouse.hide();
+var mouseListener = new Object();
+mouseListener.onMouseMove = function()
+{
+   star._x = _xmouse;
+   star._y = _ymouse;
+};
+Mouse.addListener(mouseListener);
+stop();
