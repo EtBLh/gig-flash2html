@@ -191,6 +191,7 @@ let game = () => {
             if (game_time <= 0){
                 clearInterval(game_time_loop);
                 playing = false;
+                game_over();
                 return;
             }
             document.querySelector(".counter").innerHTML = `00:${game_time/10 >= 1? "":"0"}${game_time}`
@@ -217,6 +218,7 @@ let game = () => {
             document.querySelectorAll(".circle").forEach(el => el.remove());
             document.querySelectorAll(".static-teacher").forEach(el => el.style["display"] = "block");
             start();
+            add_circle();
         }
     }
 }

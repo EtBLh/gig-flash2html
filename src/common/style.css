@@ -360,7 +360,7 @@ html, body{
 }
 
 .timesup{
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     background-image: url(../common/assets/shapes/timesup.svg);
     width: 100%;
     height: 20%;
