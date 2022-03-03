@@ -15,7 +15,9 @@ let game = (() => {
     let timer_val = 60;
 
     let click = (idx) => {
-        if (arr[idx] == target){
+        if (arr[idx] == -1) return;
+        else if (arr[idx] == target){
+            arr[idx] = -1;
             play_music("sounds/right.mp3");
             arr_view[idx].classList.add("confirm");
             remain_target--;

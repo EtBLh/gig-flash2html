@@ -145,10 +145,10 @@ body * {
 }
 
 .mouse>.view.active{
-    animation: active-mouse 1s steps(36) 1;
+    animation: active-mouse 1.3s steps(36) 1;
 }
 .mouse>.view.hit{
-    animation: hit-mouse 1s steps(29) 1;
+    animation: hit-mouse 1.3s steps(29) 1;
 }
 @keyframes active-mouse {
     from{background-position: 0 -397px ;}

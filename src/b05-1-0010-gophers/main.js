@@ -28,7 +28,7 @@ let mouse = (elem, score_counter) => {
         view.classList.add("hit");
         setTimeout(()=>{
             view.classList.remove("hit");
-        },1000);
+        },1300);
         score_counter.add();
 
         // effect animation
@@ -54,7 +54,7 @@ let mouse = (elem, score_counter) => {
             setTimeout(()=>{
                 view.classList.remove("active");
                 active = false;
-            }, 800)
+            }, 1300)
         }
     }
 }

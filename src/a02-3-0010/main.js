@@ -53,12 +53,16 @@ let game = (() => {
         playing = true;
         remaining = 5;
         hide_element(document.querySelector(".end-screen"));
+        cursor_controller.frame_off();
+        cursor_controller.star_off();
     }
 
     let game_over = () => {
         document.querySelector(".number").innerHTML = score;
         show_element(document.querySelector(".end-screen"));
         playing = false;
+        cursor_controller.frame_off();
+        cursor_controller.star_on();
     }
 
     let add_score = (val) => {

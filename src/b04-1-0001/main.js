@@ -54,7 +54,7 @@ let game = (() => {
 
         let pos = direction ? {x: 0, y: 600} : {x: 800, y: 600};
         let angle = Math.random()*Math.PI/2 * 70/90 + Math.PI/2*10/90;
-        let speed = Math.random()*2.5+1.5;
+        let speed = Math.random()*1.5+1;
         let move_vector = {
             x: Math.cos(angle) * speed * (direction?1:-1),
             y: -Math.sin(angle) * speed

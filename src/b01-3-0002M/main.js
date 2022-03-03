@@ -106,6 +106,7 @@ let game = () => {
     timer.set_cb(() => {
         console.log("finished");
         show_element(document.querySelector(".end-screen"));
+        timer.stop();
     });
 
     document.querySelector(".restart").addEventListener("click", (e) => {
