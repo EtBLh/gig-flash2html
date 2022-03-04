@@ -1,5 +1,6 @@
 let game = () => {
     let target = 0;
+    let animating = false;
     let number_view = document.querySelector(".number-viewer");
     let teacher = document.querySelector(".teacher");
     let good = document.querySelector(".good");
@@ -25,7 +26,9 @@ let game = () => {
     };
 
     let user_click = input => {
+        if (animating) return;
         if (input === target){
+            animating = true;
             right_s.play();
             teacher.classList.add("show");
             good.classList.add("show");
@@ -65,6 +68,7 @@ let game = () => {
                     document.querySelector(".drawer-front.open2").classList.remove("show");
                 }
                 next_number();
+                animating = false;
             }, target*1000)
         } else {
             wrong_s.play();

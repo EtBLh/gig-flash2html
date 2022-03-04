@@ -12,6 +12,7 @@ let game = (() => {
     const selectors_idx = [0,0,0,1,1,1];
 
     let current = -1;
+    let animating = false;
 
     const temp_selectors = [
         document.querySelector(".select-temperature"),
@@ -31,16 +32,16 @@ let game = (() => {
 
     temp_selectors[1].addEventListener("mouseenter", () => {
         document.querySelector(".measure").classList.add("low");
-    })
+    });
     temp_selectors[1].addEventListener("mouseleave", () => {
         document.querySelector(".measure").classList.remove("low");
-    })
+    });
     temp_selectors[3].addEventListener("mouseenter", () => {
         document.querySelector(".measure").classList.add("high");
-    })
+    });
     temp_selectors[3].addEventListener("mouseleave", () => {
         document.querySelector(".measure").classList.remove("high");
-    })
+    });
 
     let hp = 3;
 
@@ -77,7 +78,7 @@ let game = (() => {
 
     let right = () => {
         let aright = new Audio("sounds/right.mp3");
-        aright.play(); 
+        aright.play();
         remaining[current] = 0;
         remainings--;
         controllers[current].start();
@@ -87,6 +88,7 @@ let game = (() => {
             controllers[current].stop();
             if (remainings <= 1) {win(); return;}
             else {rand_current()}
+            animating = false;
         }, 2000);
         setTimeout(() => {
             document.querySelector(".teacher").classList.remove("show");
@@ -113,16 +115,20 @@ let game = (() => {
 
     for (let i =1 ; i < 4; i++){
         temp_selectors[i].addEventListener("click",() => {
+            if (animating) return;
             let self = i+2;
             if (self == current){
+                animating = true;
                 right();
             } else wrong(self);
             let hover = new Audio("sounds/btn_hover.mp3");
             hover.play();
         }),
         weather_selectors[i].addEventListener("click",() => {
+            if (animating) return;
             let self = i-1;
             if (self == current){
+                animating = true;
                 right();
             } else wrong(self);
             let hover = new Audio("sounds/btn_hover.mp3");
