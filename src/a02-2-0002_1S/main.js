@@ -196,7 +196,7 @@ let game = () => {
             }
             document.querySelector(".counter").innerHTML = `00:${game_time/10 >= 1? "":"0"}${game_time}`
         }, 1000);
-    };
+    }
 
     return{
         start: start,

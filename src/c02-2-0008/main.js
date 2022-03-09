@@ -69,33 +69,50 @@
         hands: document.querySelectorAll(".hand")
     }
     let holding = -1;
-    element.hands.forEach((val, key) => {
-        val.addEventListener("mousedown", e => {
+
+    let user_control_start_factory = (val, key) => {
+        return e =>{
             holding = key;
+
+            let left = e.clientX ||  e.targetTouches[0].pageX;
+            let top = e.clientY ||  e.targetTouches[0].pageY;
+
             let rect = e.currentTarget.getBoundingClientRect();
-            rex = e.clientX - rect.left;
-            rey = e.clientY - rect.top;
+            rex = left - rect.left;
+            rey = top - rect.top;
             drag_elem = val;
-        });
+        }
+    }
+
+    element.hands.forEach((val, key) => {
+        val.addEventListener("mousedown", user_control_start_factory(val, key));
+        val.addEventListener("touchstart", user_control_start_factory(val, key));
     });
 
     let frame = document.querySelector("#frame");
 
-    frame.addEventListener("mousemove", e => {
+    let user_control_move = e => {
         e.preventDefault();
         if (drag_elem === null) return;
+
+        let left = e.clientX ||  e.targetTouches[0].pageX;
+        let top = e.clientY ||  e.targetTouches[0].pageY;
+
         let rect = e.currentTarget.getBoundingClientRect();
-        let x = e.clientX - rect.left;
-        let y = e.clientY - rect.top;
+        let x = left - rect.left;
+        let y = top - rect.top;
         let angle = get_angle([x,y]);
         drag_elem.style["transform"] = `rotate(${angle}deg)`;
         if (abs(target_deg[holding] - angle) <= 50){ 
             correct[holding] = true;
         }
         else {correct[holding] = false;}
-    });
+    };
 
-    frame.addEventListener("mouseup",e => {
+    frame.addEventListener("mousemove", user_control_move);
+    frame.addEventListener("touchmove", user_control_move);
+
+    let user_control_end = e => {
         if (drag_elem == null) return;
 
         if (correct[holding]){
@@ -116,7 +133,10 @@
                 game_over();
             }
         }
-    });
+    }
+
+    frame.addEventListener("mouseup", user_control_end);
+    frame.addEventListener("touchend", user_control_end);
 
     next();
 
