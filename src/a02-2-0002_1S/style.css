@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 .bg1{
     background-image: url(shapes/74.svg);
     width: 200%;

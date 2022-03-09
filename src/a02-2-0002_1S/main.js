@@ -6,16 +6,27 @@ let game = () => {
     let power_level = 0;
     let power_bar = document.querySelector(".power-measure-bar");
     power_bar.style["width"] = "0px";
-    document.querySelector("#frame").addEventListener("mousedown", () => {
+    let user_control_move = e => {
+        e.preventDefault();
+        let hand = document.querySelector(".hand");
+        let left = e.clientX ||  e.targetTouches[0].pageX;
+        hand.style["left"] = left-(window.innerWidth-frame.clientWidth)/2 - 800*0.075 + "px";
+        let current = document.querySelector(".holding");
+        if (current != null){
+            current.style["left"] = left-(window.innerWidth-frame.clientWidth)/2 - 800*0.075 + "px"; 
+        }
+    };
+    let user_control_start = e => {
         if (!playing) return;
+        user_control_move(e);
         clearInterval(power_up);
         if (is_power_down) return;
         power_up = setInterval(() => {
             if (power_level >= 100) return;
             power_bar.style["width"] = (++power_level)/100*223 + "px"; 
         }, 10)
-    })
-    document.querySelector("#frame").addEventListener("mouseup", () => {
+    };
+    let user_control_end = e => {
         if (!playing) return;
         clearInterval(power_up);
         is_power_down = true;
@@ -29,7 +40,12 @@ let game = () => {
             power_bar.style["width"] = (power_level)/100*223 + "px"; 
         }, 0.1)
         throw_circle(power_level);
-    });
+    };
+
+    document.querySelector("#frame").addEventListener("mousedown", user_control_start);
+    document.querySelector("#frame").addEventListener("touchstart", user_control_start);
+    document.querySelector("#frame").addEventListener("mouseup", user_control_end);
+    document.querySelector("#frame").addEventListener("touchend", user_control_end);
     
     let scale_function = (time_ratio, pl) => {
         pl = pl - 50
@@ -202,14 +218,10 @@ let game = () => {
         start: start,
         init: () => {
             let frame = document.querySelector("#frame");
-            let hand = document.querySelector(".hand");
-            frame.addEventListener("mousemove", e => {
-                hand.style["left"] = e.clientX-(window.innerWidth-frame.clientWidth)/2 - 800*0.075 + "px";
-                let current = document.querySelector(".holding");
-                if (current != null){
-                    current.style["left"] = e.clientX-(window.innerWidth-frame.clientWidth)/2 - 800*0.075 + "px"; 
-                }
-            })
+
+
+            frame.addEventListener("mousemove", user_control_move);
+            frame.addEventListener("touchmove", user_control_move);
         },
         restart: () => {
             game_time = 60;
