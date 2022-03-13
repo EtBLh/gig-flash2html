@@ -20,8 +20,32 @@ let mouse = (elem, score_counter) => {
     view.classList.add("view");
     elem.appendChild(view);
 
+    let hammer_cursor = document.querySelector(".hammer-cursor");
+    let frame = document.querySelector("#frame");
+
     //when hitted
-    click_box.addEventListener("mousedown", e=>{
+    let user_punch = e => {
+
+        e.preventDefault();
+
+        let hammer_cursor_view = document.querySelector(".hammer-cursor>.view");
+        hammer_cursor_view.classList.remove("punching");
+        hammer_cursor_view.classList.add("punching");
+        setTimeout(()=>{
+            hammer_cursor_view.classList.remove("punching");
+        },300);
+
+        let left;
+        let top;
+        if (e.touches){
+            left = e.touches[0].clientX;
+            top = e.touches[0].clientY;
+        } else {
+            left = e.clientX;
+            top = e.clientY;
+        }
+        hammer_cursor.style["left"] = left-(window.innerWidth-frame.clientWidth)/2 + "px";
+        hammer_cursor.style["top"] = top-(window.innerHeight-frame.clientHeight)/2 + "px";
         if (!active) return;
         active = false;
         view.classList.remove("active");
@@ -32,21 +56,21 @@ let mouse = (elem, score_counter) => {
         score_counter.add();
 
         // effect animation
-        let frame = document.querySelector("#frame");
         let smoke = document.createElement("div");
         smoke.classList.add("smoke-effect");
         smoke.classList.add("element")
-        smoke.style["left"] = e.clientX-(window.innerWidth-frame.clientWidth)/2 + "px";
-        smoke.style["top"] = e.clientY-(window.innerHeight-frame.clientHeight)/2 + "px";
+        smoke.style["left"] = left-(window.innerWidth-frame.clientWidth)/2 + "px";
+        smoke.style["top"] = top-(window.innerHeight-frame.clientHeight)/2 + "px";
         frame.appendChild(smoke);
         setTimeout(()=>{
             frame.removeChild(smoke);
         },300);
 
-
         let hit = new Audio("sounds/102.mp3");
         hit.play();
-    })
+    }
+    click_box.addEventListener("mousedown", user_punch);
+    click_box.addEventListener("touchstart", user_punch);
     return {
         active: function(){
             active = true;
