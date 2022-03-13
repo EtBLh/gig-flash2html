@@ -10,16 +10,24 @@
         cursor_controller.star_off();
         cursor_controller.frame_on();
         playing = true;
+        timer.start();
     });
 
     document.querySelector(".restart").addEventListener("click", e => {
         finished = 0;
         hide_element(document.querySelector(".end-screen"));
+        timer.start();
+    });
+
+    timer.set_initial(150);
+    timer.set_element(document.querySelector(".comtimer"));
+    timer.set_cb(() => {
+        game_over();
+        timer.stop();
     });
 
     let game_over = () => {
         show_element(document.querySelector(".end-screen"));
-
     }
 
     const vector_center = [485.5, 350];

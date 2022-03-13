@@ -8,6 +8,20 @@
     document.querySelector(".start-btn").addEventListener("click",e => {
         document.querySelector(".start-screen").style["display"] = "none";
         start_voice.play();
+        timer.start();
+    });
+
+    timer.set_initial(150);
+    timer.set_element(document.querySelector(".comtimer"));
+    timer.set_cb(() => {
+        let endscreen = document.querySelector(".end-screen");
+        endscreen.style.display = "block";
+        timer.stop();
+    });
+    document.querySelector(".restart").addEventListener("click", e => {
+        let endscreen = document.querySelector(".end-screen");
+        endscreen.style.display = "none";
+        timer.start();
     });
 
     let current = 0;
