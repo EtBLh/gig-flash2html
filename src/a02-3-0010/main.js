@@ -132,7 +132,21 @@ let game = (() => {
     return {
         init : () => {
             power_bar.style["width"] = "0px";
-            frame.addEventListener("mousedown", () => {
+
+            function absorbEvent_(event) {
+                var e = event || window.event;
+                e.preventDefault && e.preventDefault();
+                e.stopPropagation && e.stopPropagation();
+                e.cancelBubble = true;
+                e.returnValue = false;
+                return false;
+            }
+
+            frame.addEventListener("touchcancel", absorbEvent_);
+            window.oncontextmenu = function() { return false; }
+
+            let user_control_start = e => {
+                user_control_move(e);
                 if (!playing || throwing) return;
                 clearInterval(power_up);
                 if (is_power_down) return;
@@ -154,8 +168,11 @@ let game = (() => {
                         }
                     });
                 }, 10)
-            })
-            frame.addEventListener("mouseup", () => {
+            };
+            frame.addEventListener("mousedown", user_control_start);
+            frame.addEventListener("touchstart", user_control_start);
+
+            let user_control_end =  e => {
                 if (!playing) return;
                 clearInterval(power_up);
                 is_power_down = true;
@@ -173,33 +190,27 @@ let game = (() => {
                     ele.classList.remove("glowing");
                 }));
                 _throw();
-            });
-            frame.addEventListener("mousemove", e => {
+            };
+            frame.addEventListener("mouseup", user_control_end);
+            frame.addEventListener("touchend", user_control_end);
+            
+            let user_control_move = e => {
+                let user_left = e.clientX || e.touches[0].clientX;
+                let user_top = e.clientY || e.touches[0].clientY;
                 
                 let coor = [mouse_pos[0] - vector_center[0], mouse_pos[1] - vector_center[1]];
-                // score_range.forEach((cat, sc) => {
-                //     cat.forEach(vector => {
-                //         let dist2p = Math.sqrt(Math.pow(coor[0] - vector[0],2) + Math.pow(coor[1] - vector[1],2));
-                //         console.log(dist2p);
-                //         if( dist2p <= vector[2]) console.log('fucker');
-                //     })
-                // });
-                // vector = score_range[1][0];
-                // let dist2p = Math.sqrt(Math.pow(coor[0] - vector[0],2) + Math.pow(coor[1] - vector[1],2));
-                // console.log(dist2p);
-                // if( dist2p <= vector[2]) console.log('fucker');
-
-                e.preventDefault();
                 let rect = e.currentTarget.getBoundingClientRect();
-                let x = e.clientX - rect.left;
-                let y = e.clientY - rect.top;
+                let x = user_left - rect.left;
+                let y = user_top - rect.top;
                 let temp_pos = [x,y];
                 let temp_angle = get_angle(temp_pos);
                 if (temp_angle > 60 && temp_angle < 300) return;
                 mouse_pos = temp_pos;
                 angle = temp_angle;
                 angle_indicator.style["transform"] = `rotate(${angle}deg)  translate(-50%, 0)`;
-            });
+            };
+            frame.addEventListener("mousemove", user_control_move);
+            frame.addEventListener("touchmove", user_control_move);
         },
         start: start,
         restart: () => {
@@ -220,6 +231,7 @@ let game = (() => {
 
     game.init();
     document.querySelector(".start-btn").addEventListener("click",e => {
+        e.preventDefault();
         cursor_controller.star_off();
         document.querySelector(".start-screen").style["display"] = "none";
         game.start();

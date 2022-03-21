@@ -67,15 +67,21 @@ let game = (() => {
             let drag_elem = null;
             element.unplaced_part.forEach((up, vi) => {
                 up.forEach((val, key) => {
-                    val.addEventListener("mousedown", e => {
+                    let user_control_down = e => {
+                        e.preventDefault();
+                        let user_left = e.clientX || e.touches[0].clientX;
+                        let user_top = e.clientY || e.touches[0].clientY;
+
                         holding = key;
                         let rect = e.currentTarget.getBoundingClientRect();
-                        rex = e.clientX - rect.left;
-                        rey = e.clientY - rect.top;
+                        rex = user_left - rect.left;
+                        rey = user_top - rect.top;
                         drag_elem = val;
                         drag_idx = key;
                         drag_vehicle = vi;
-                    });
+                    }
+                    val.addEventListener("mousedown", user_control_down);
+                    val.addEventListener("touchstart", user_control_down);
                 });
             });
             element.nav.forEach((cat, idx) => {
@@ -100,7 +106,7 @@ let game = (() => {
             }
             let frame = document.querySelector("#frame");
 
-            frame.addEventListener("mouseup",e => {
+            let user_control_end = e => {
                 if (drag_elem == null) return;
                 drag_idx = -1;
                 drag_number = -1;
@@ -129,22 +135,29 @@ let game = (() => {
                     }, 500);
                 }
                 holding = -1;
-            });
-            frame.addEventListener("mousemove",e => {
+            }
+            frame.addEventListener("mouseup", user_control_end);
+            frame.addEventListener("touchend", user_control_end);
+
+            let user_control_move = e => {
                 e.preventDefault();
                 if (drag_elem === null) return;
+                let user_left = e.clientX || e.touches[0].clientX;
+                let user_top = e.clientY || e.touches[0].clientY;
                 let rect = e.currentTarget.getBoundingClientRect();
-                let x = e.clientX - rect.left - drag_elem.offsetWidth/2;
-                let y = e.clientY - rect.top - drag_elem.offsetHeight/2;
+                let x = user_left - rect.left - drag_elem.offsetWidth/2;
+                let y = user_top - rect.top - drag_elem.offsetHeight/2;
 
                 drag_elem.style["left"] = ( x ) + "px";
                 drag_elem.style["top"] = ( y ) + "px";
                 
                 in_range = (y > current_coor[0]-60) && (x > current_coor[1]-60);
-            });
+            };
             ctimer.set_initial(150);
             ctimer.set_element(document.querySelector(".comtimer"));
             ctimer.set_cb(game_over);
+            frame.addEventListener("mousemove", user_control_move);
+            frame.addEventListener("touchmove", user_control_move);
         }
 
     }
@@ -157,7 +170,7 @@ let game = (() => {
 
     game.init();
 
-    document.querySelector(".start-btn").addEventListener("click", () => {
+    document.querySelector(".start-btn").addEventListener("mousedown", () => {
         document.querySelector(".start-screen").style.display = "none";
         // play_music("sounds/1_開始玩.mp3");
         ctimer.start();
@@ -165,5 +178,10 @@ let game = (() => {
     document.querySelector(".restart").addEventListener("click", () => {
         game.restart();
     })
+    document.querySelector(".start-btn").addEventListener("touchstart", () => {
+        document.querySelector(".start-screen").style.display = "none";
+        cursor_controller.star_off();
+        // play_music("sounds/1_開始玩.mp3");
+    });
 
 })();
