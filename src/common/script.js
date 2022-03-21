@@ -137,3 +137,5 @@ let timer = (() => {
         }
     }
 })();
+
+let ctimer = timer;

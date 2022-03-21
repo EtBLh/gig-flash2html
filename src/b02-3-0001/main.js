@@ -39,7 +39,7 @@ let game = (() => {
             upl.forEach( up => {
                 show_element(up);
             })
-        })
+        });
     }
 
     let restart = () => {
@@ -51,8 +51,13 @@ let game = (() => {
         
         category = -1;
         cursor_controller.star_on();
-        show_element(element.menu);
-        hide_element(element.main);
+        ctimer.start();
+        hide_element(document.querySelector(".end-screen"));
+    }
+
+    let game_over = () => {
+        ctimer.stop();
+        show_element(document.querySelector(".end-screen"));
     }
 
     return {
@@ -137,7 +142,11 @@ let game = (() => {
                 
                 in_range = (y > current_coor[0]-60) && (x > current_coor[1]-60);
             });
+            ctimer.set_initial(150);
+            ctimer.set_element(document.querySelector(".comtimer"));
+            ctimer.set_cb(game_over);
         }
+
     }
 })();
 
@@ -151,6 +160,10 @@ let game = (() => {
     document.querySelector(".start-btn").addEventListener("click", () => {
         document.querySelector(".start-screen").style.display = "none";
         // play_music("sounds/1_開始玩.mp3");
+        ctimer.start();
+    });
+    document.querySelector(".restart").addEventListener("click", () => {
+        game.restart();
     })
 
 })();

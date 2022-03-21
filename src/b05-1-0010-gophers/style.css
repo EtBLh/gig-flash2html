@@ -53,7 +53,7 @@ body * {
 
 .machine{
     background-image:  url("css-sprite/machine.png");
-    background-size: calc(800px * 1.4);
+    background-size: calc(800px * 1.4) 26428px;
     background-position: 0 0;
     background-repeat: no-repeat;
     /* width: 1539px;

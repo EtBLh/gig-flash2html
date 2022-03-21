@@ -2,6 +2,10 @@
     user-select: none;
 }
 
+.comtimer{
+    z-index: 900;
+}
+
 .bg1{
     top: -4%;
     left: -10%;
