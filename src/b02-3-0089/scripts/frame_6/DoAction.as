@@ -1,0 +1,2 @@
+stop();
+delete this.onEnterFrame;
