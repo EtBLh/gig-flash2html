@@ -3,6 +3,11 @@
 }
 
 .comtimer{
+    top: initial;
+    bottom: 1rem;
+}
+
+.comtimer{
     z-index: 900;
 }
 

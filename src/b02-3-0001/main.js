@@ -182,6 +182,7 @@ let game = (() => {
         document.querySelector(".start-screen").style.display = "none";
         cursor_controller.star_off();
         // play_music("sounds/1_開始玩.mp3");
+        ctimer.start();
     });
 
 })();
