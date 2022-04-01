@@ -51,6 +51,7 @@ html, body{
 }
 
 .leave{
+    display: none;
     z-index: 1700;
     background-size: contain;
     background-repeat: no-repeat;
@@ -201,12 +202,13 @@ html, body{
     height: 100%;
     display: block;
     margin: 5% auto;
+    padding-top: 10%;
 }
 
 .end-screen .btn{
+    display: none;
     color: #0042d1;
     position: relative;
-    display: block;
     z-index: 1451;
     background-image: url(../common/assets/shapes/134.svg);
     width: 100%;
@@ -216,6 +218,10 @@ html, body{
     font-size: 40px;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+.end-screen .btn.restart{
+    display: block;
 }
 
 .end-screen .btn::before{
