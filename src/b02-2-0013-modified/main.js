@@ -68,8 +68,8 @@ let game = (() => {
         for (let i = 0; i < 32; i++){
             arr.push(0);
         }
-        target = Math.floor(Math.random()*5)+1;
-        remain_target = Math.floor(Math.random()*5)+6;
+        target = Math.floor(Math.random()*4)+1;
+        remain_target = Math.floor(Math.random()*4)+6;
         for (let temp_remain = remain_target; temp_remain > 0; temp_remain--){
             let idx = Math.floor(Math.random()*(32-temp_remain));
             while (arr[idx] != 0){
@@ -77,11 +77,11 @@ let game = (() => {
             }
             arr[idx] = target;
         }
-        let temp_idx_arr = [0,1,2,3,4,5];
+        let temp_idx_arr = [0,1,2,3,4];
         temp_idx_arr.splice(target,1);
         temp_idx_arr.splice(0,1);
         for (let i = 0; i < 32; i++){
-            if (arr[i] == 0)  arr[i] = temp_idx_arr[Math.floor(Math.random()*4)];
+            if (arr[i] == 0)  arr[i] = temp_idx_arr[Math.floor(Math.random()*3)];
             arr_view[i].classList.add("p"+arr[i]);
         }
         document.querySelector(".target-item").classList.add("p" + target);
@@ -96,7 +96,6 @@ let game = (() => {
                 el.classList.remove("p2");
                 el.classList.remove("p3");
                 el.classList.remove("p4");
-                el.classList.remove("p5");
             });
             document.querySelector(".target-item").classList.remove("p" + target);
             timer_val = 60;

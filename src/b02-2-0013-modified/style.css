@@ -71,27 +71,22 @@
 }
 
 .target-item.p1{
-    background-image: url(images/92.png); 
+    background-image: url(images/155.png); 
     left: 15%;
 }
 
 .target-item.p2{
-    background-image: url(images/93.png); 
+    background-image: url(images/165.png); 
     left: 25%;
 }
 
 .target-item.p3{
-    background-image: url(images/94.png); 
+    background-image: url(images/172.png); 
     left: 15%;
 }
 
 .target-item.p4{
-    background-image: url(images/95.png); 
-    left: 12%;
-}
-
-.target-item.p5{
-    background-image: url(images/96.png); 
+    background-image: url(images/179.png); 
     left: 12%;
 }
 
@@ -139,21 +134,17 @@
 }
 
 .item.p1{
-    background-image: url(images/92.png);
+    background-image: url(images/155.png);
 }
 .item.p2{
-    background-image: url(images/93.png);
+    background-image: url(images/165.png);
 }
 .item.p3{
-    background-image: url(images/94.png);
+    background-image: url(images/172.png);
 }
 .item.p4{
-    background-image: url(images/95.png);
+    background-image: url(images/179.png);
 }
-.item.p5{
-    background-image: url(images/96.png);
-}
-
 
 .wrong{
     top: 45%;
