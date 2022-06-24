@@ -48,7 +48,8 @@ let game = (() => {
         let temp = 0;
         let remain_time = 60;
         timer = setInterval(() => {
-            element.time.innerHTML=`00:${remain_time/10<1?"0":""}${remain_time}`;
+            let sec = remain_time % 60;
+            element.time.innerHTML=`0${remain_time==60?"1":"0"}:${sec/10<1?"0":""}${sec}`;
             remain_time --;
         },1000);
         let sex = Math.random() > 0.5 ? "m" : "f";

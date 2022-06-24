@@ -8,7 +8,6 @@ let game = (() => {
     let ctx = element.canvas.getContext('2d');
     let shape = new Image();
     shape.src = "shapes/95.svg";
-    let bubble_generatator = null;
 
     const MASK_WIDTH = 115.7;
     const MASK_HEIGHT = 143.5;
